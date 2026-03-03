@@ -1,18 +1,31 @@
-import express from 'express';
-import rootRouter from './src/routers/root.router.js';
-import { appError } from './src/common/helpers/app-error.helper.js';
+import express from "express";
+import rootRouter from "./src/routers/root.router.js";
+import { appError } from "./src/common/helpers/app-error.helper.js";
 
 const app = express();
-
-app.get('/',(request ,response,next)=>{
-    response.json("hello you ")
-})
-app.use("/api",rootRouter);
+app.use(express.json());
+//
+app.get("/", (request, response, next) => {
+  response.json("hello you ");
+});
+app.use("/api", rootRouter);
 app.use(appError);
 
+// const PORT = 3000;
+const PORT = 3069;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 
-const PORT = 3000;
-app.listen(PORT, ()=>{
-    console.log(`Server is running on http://localhost:${PORT}`);
-})
+// js Version cũ: common-js
+// const express =  required("express")
 
+// ES6: phiên bản nâng cấp rất rất nhiều của js
+
+// js Version mới: es-module
+// import express from "express"
+
+// npx prisma db pull: kéo database vào code và tạo ra model
+// npx prisma generate: tạo ra object CLIENT để sử dụng trong code (để dev)
+
+// EXPRESSS verssion <5: phải bắt try/catch trong controller
