@@ -171,7 +171,8 @@ exports.Prisma.UsersScalarFieldEnum = {
   isDeleted: 'isDeleted',
   deletedAt: 'deletedAt',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  password: 'password'
 };
 
 exports.Prisma.FoodsScalarFieldEnum = {
@@ -212,7 +213,8 @@ exports.Prisma.UsersOrderByRelevanceFieldEnum = {
   fullname: 'fullname',
   avatar: 'avatar',
   totpSecret: 'totpSecret',
-  googleId: 'googleId'
+  googleId: 'googleId',
+  password: 'password'
 };
 
 exports.Prisma.foodsOrderByRelevanceFieldEnum = {
