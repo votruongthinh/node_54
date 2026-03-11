@@ -2,6 +2,8 @@ import express from "express";
 import rootRouter from "./src/routers/root.router.js";
 import { appError } from "./src/common/helpers/app-error.helper.js";
 import cors from "cors";
+import cookieParser from "cookie-parser";
+import { logApi } from "./src/common/middlewares/log-api.middleware.js";
 
 const app = express();
 
@@ -14,11 +16,13 @@ app.use((req,res,next)=>{
   next();
 })
 app.use(cors({origin:["http://localhost:3000"]}));
+
 app.use(express.json());
-//
-app.get("/", (request, response, next) => {
-  response.json("hello you ");
-});
+//đảm bảo đặt trước "/api"
+app.use(cookieParser());
+
+app.use(logApi("product"));
+
 app.use("/api", rootRouter);
 app.use(appError);
 
