@@ -4,17 +4,17 @@ import { appError } from "./src/common/helpers/app-error.helper.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import { logApi } from "./src/common/middlewares/log-api.middleware.js";
-
+import { initLoginGooglePassport } from "./src/common/passport/login-google.passport.js";
 const app = express();
 
 //xử lý CORS thủ công 
-app.use((req,res,next)=>{
-  console.log(req.headers); 
-  res.setHeader("access-control-allow-methods", "GET,HEAD,PUT,PATCH,DELETE,POST")
-  res.setHeader("access-control-allow-headers", "content-type")
-  res.setHeader("access-control-allow-origin", "http://localhost:3000")
-  next();
-})
+// app.use((req,res,next)=>{
+//   console.log(req.headers); 
+//   res.setHeader("access-control-allow-methods", "GET,HEAD,PUT,PATCH,DELETE,POST")
+//   res.setHeader("access-control-allow-headers", "content-type")
+//   res.setHeader("access-control-allow-origin", "http://localhost:3000")
+//   next();
+// })
 app.use(cors({origin:["http://localhost:3000"]}));
 
 app.use(express.json());
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(logApi("product"));
-
+initLoginGooglePassport()
 app.use("/api", rootRouter);
 app.use(appError);
 

@@ -18,6 +18,11 @@ export const protect = async (req, res, next) => {
             id: decode.userId,
         },
     });
+
+    if(!userExits){
+        throw new UnauthorizedException("Người dùng không tồn tại");
+    }
+
     req.user = userExits;
     console.log("protect:", { accessToken, decode, userExits });
 

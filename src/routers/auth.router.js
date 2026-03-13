@@ -1,11 +1,29 @@
-import express from 'express';
-import{ authController }from '../controllers/auth.controller.js';
-import { protect } from '../common/middlewares/protect.middleware.js';
-
+import express from "express";
+import { authController } from "../controllers/auth.controller.js";
+import { protect } from "../common/middlewares/protect.middleware.js";
+import passport from "passport";
 
 const authRouter = express.Router();
 
-authRouter.post("/register",authController.register)
-authRouter.post("/login", authController.login)
+authRouter.post("/register", authController.register);
+authRouter.post("/login", authController.login);
 authRouter.get("/get-info", protect, authController.getInfo);
+authRouter.post("/refresh-token", authController.refreshToken);
+
+//khi người dùng click nút login google sẽ gọi api bằng thanh url
+//passport sẽ được kích hoạt và chuyển người dùng tới trang chọn tài khoản(gmail) và đồng scope mà mình đã yêu cầu
+authRouter.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+authRouter.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    failureRedirect: "/login",
+    session: false,
+  }),
+  // choox nayf em chu gan controller vo
+  authController.googlecallback
+);
 export default authRouter;

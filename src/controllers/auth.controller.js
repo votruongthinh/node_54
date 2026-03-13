@@ -24,4 +24,25 @@ export const authController = {
       const response = responseSuccess(result, `get info auths successfully`);
       res.status(response.statusCode).json(response);
    },
+
+   async refreshToken(req, res, next) {
+      const result = await authService.refreshToken(req);
+      const response = responseSuccess(true, `login auths successfully`);
+
+      res.cookie("accessToken",result.accessToken) //cần đổi 
+      res.cookie("refreshToken",result.refreshToken) // cần đổi
+
+
+      res.status(response.statusCode).json(response);
+   },
+   async googlecallback(req, res, next) {
+      // console.log(req.user);
+      // console.log("AT",req.user.accessToken);
+      // console.log("RT",req.user.refreshToken);
+      res.cookie("accessToken", req.user.accessToken) //cần đổi 
+      res.cookie("refreshToken", req.user.refreshToken) // cần đổi
+
+
+      res.redirect("http://localhost:3000/login-callback");
+   },
 };
