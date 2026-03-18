@@ -16,13 +16,13 @@ export const appError = (err, req, res, next) => {
     err.code = statusCodes.FORBIDDEN; // 403 sẽ gọi api refresh token
   }
 
-  console.log({
-    cause: err?.cause,
-    message: err?.message,
-    name: err?.name,
-    stack: err?.stack,
-    code: err?.code,
-  });
+  // console.log({
+  //   cause: err?.cause,
+  //   message: err?.message,
+  //   name: err?.name,
+  //   stack: err?.stack,
+  //   code: err?.code,
+  // });
   const response = responseError(err?.message, err?.code, err?.stack);
   console.log(response);
   res.status(response.statusCode).json(response);
