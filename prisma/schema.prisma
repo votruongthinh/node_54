@@ -59,22 +59,25 @@ model Orders {
 }
 
 model Users {
-  id            Int             @id @default(autoincrement())
-  email         String          @unique(map: "email") @db.VarChar(255)
-  fullname      String?         @db.VarChar(255)
-  avatar        String?         @db.Text
-  age           Int?
-  totpSecret    String?         @db.VarChar(255)
-  googleId      String?         @db.VarChar(255)
-  deletedBy     Int             @default(0)
-  isDeleted     Boolean         @default(false)
-  deletedAt     DateTime?       @db.Timestamp(0)
-  createdAt     DateTime        @default(now()) @db.Timestamp(0)
-  updatedAt     DateTime        @default(now()) @db.Timestamp(0)
-  password      String?         @db.VarChar(255)
-  Articles      Articles[]
-  Articles_demo Articles_demo[]
-  Orders        Orders[]
+  id               Int                @id @default(autoincrement())
+  email            String             @unique(map: "email") @db.VarChar(255)
+  fullName         String?            @db.VarChar(255)
+  avatar           String?            @db.Text
+  age              Int?
+  totpSecret       String?            @db.VarChar(255)
+  googleId         String?            @db.VarChar(255)
+  deletedBy        Int                @default(0)
+  isDeleted        Boolean            @default(false)
+  deletedAt        DateTime?          @db.Timestamp(0)
+  createdAt        DateTime           @default(now()) @db.Timestamp(0)
+  updatedAt        DateTime           @default(now()) @db.Timestamp(0)
+  password         String?            @db.VarChar(255)
+  Articles         Articles[]
+  Articles_demo    Articles_demo[]
+  ChatGroupMembers ChatGroupMembers[]
+  ChatGroups       ChatGroups[]
+  ChatMessages     ChatMessages[]
+  Orders           Orders[]
 }
 
 model foods {
@@ -87,4 +90,53 @@ model foods {
   createdAt   DateTime  @default(now()) @db.Timestamp(0)
   updatedAt   DateTime  @default(now()) @db.Timestamp(0)
   Orders      Orders[]
+}
+
+model ChatGroupMembers {
+  id          Int         @id @default(autoincrement())
+  userId      Int?
+  chatGroupId Int?
+  deletedBy   Int         @default(0)
+  isDeleted   Boolean     @default(false)
+  deletedAt   DateTime?   @db.Timestamp(0)
+  createdAt   DateTime    @default(now()) @db.Timestamp(0)
+  updatedAt   DateTime    @default(now()) @db.Timestamp(0)
+  Users       Users?      @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ChatGroupMembers_ibfk_1")
+  ChatGroups  ChatGroups? @relation(fields: [chatGroupId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ChatGroupMembers_ibfk_2")
+
+  @@index([chatGroupId], map: "chatGroupId")
+  @@index([userId], map: "userId")
+}
+
+model ChatGroups {
+  id               Int                @id @default(autoincrement())
+  name             String?            @db.VarChar(255)
+  ownerId          Int?
+  deletedBy        Int                @default(0)
+  isDeleted        Boolean            @default(false)
+  deletedAt        DateTime?          @db.Timestamp(0)
+  createdAt        DateTime           @default(now()) @db.Timestamp(0)
+  updatedAt        DateTime           @default(now()) @db.Timestamp(0)
+  ChatGroupMembers ChatGroupMembers[]
+  Users            Users?             @relation(fields: [ownerId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ChatGroups_ibfk_1")
+  ChatMessages     ChatMessages[]
+
+  @@index([ownerId], map: "ownerId")
+}
+
+model ChatMessages {
+  id           Int         @id @default(autoincrement())
+  chatGroupId  Int?
+  userIdSender Int?
+  messageText  String?     @db.Text
+  deletedBy    Int         @default(0)
+  isDeleted    Boolean     @default(false)
+  deletedAt    DateTime?   @db.Timestamp(0)
+  createdAt    DateTime    @default(now()) @db.Timestamp(0)
+  updatedAt    DateTime    @default(now()) @db.Timestamp(0)
+  ChatGroups   ChatGroups? @relation(fields: [chatGroupId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ChatMessages_ibfk_1")
+  Users        Users?      @relation(fields: [userIdSender], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "ChatMessages_ibfk_2")
+
+  @@index([chatGroupId], map: "chatGroupId")
+  @@index([userIdSender], map: "userIdSender")
 }

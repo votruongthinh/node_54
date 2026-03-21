@@ -5,7 +5,6 @@ import { buildQueryPrisma } from "../common/helpers/build-query-prisma-helper.js
 // prisma của em tích hợp thành công rùi nà
 // em xem tiếp các phần khác nha
 // chỗ nào hông hiểu cứ nhắn anh nha
-
 // 4 nơi nhận dữ liệu từ FE gửi
 // BODY
 // PARAMS
@@ -89,5 +88,15 @@ export const articleService = {
       },
     });
     return true;
+  },
+  async findOne(req) {
+    const { articleId } = req.params;
+
+    const article = await prisma.articles.findUnique({
+      where:{
+        id: Number(articleId)
+      }
+    });
+    return article;
   },
 };

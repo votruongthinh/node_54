@@ -8,5 +8,6 @@ const userRouter = express.Router();
 // Tạo route C
 userRouter.post('/avatar-local',protect,uploadDiskStorage.single("avatar"), userController.avatarLocal);
 userRouter.post("/avatar-cloud",protect, uploadMemoryStorage.single("avatar"),userController.avatarCloud)
-
+userRouter.get("",userController.findAll)
+userRouter.get("/:id",userController.findOne)
 export default userRouter;

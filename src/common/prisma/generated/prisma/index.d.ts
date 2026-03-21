@@ -38,6 +38,21 @@ export type Users = $Result.DefaultSelection<Prisma.$UsersPayload>
  * 
  */
 export type foods = $Result.DefaultSelection<Prisma.$foodsPayload>
+/**
+ * Model ChatGroupMembers
+ * 
+ */
+export type ChatGroupMembers = $Result.DefaultSelection<Prisma.$ChatGroupMembersPayload>
+/**
+ * Model ChatGroups
+ * 
+ */
+export type ChatGroups = $Result.DefaultSelection<Prisma.$ChatGroupsPayload>
+/**
+ * Model ChatMessages
+ * 
+ */
+export type ChatMessages = $Result.DefaultSelection<Prisma.$ChatMessagesPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -205,6 +220,36 @@ export class PrismaClient<
     * ```
     */
   get foods(): Prisma.foodsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.chatGroupMembers`: Exposes CRUD operations for the **ChatGroupMembers** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ChatGroupMembers
+    * const chatGroupMembers = await prisma.chatGroupMembers.findMany()
+    * ```
+    */
+  get chatGroupMembers(): Prisma.ChatGroupMembersDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.chatGroups`: Exposes CRUD operations for the **ChatGroups** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ChatGroups
+    * const chatGroups = await prisma.chatGroups.findMany()
+    * ```
+    */
+  get chatGroups(): Prisma.ChatGroupsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.chatMessages`: Exposes CRUD operations for the **ChatMessages** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ChatMessages
+    * const chatMessages = await prisma.chatMessages.findMany()
+    * ```
+    */
+  get chatMessages(): Prisma.ChatMessagesDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -643,7 +688,10 @@ export namespace Prisma {
     Articles_demo: 'Articles_demo',
     Orders: 'Orders',
     Users: 'Users',
-    foods: 'foods'
+    foods: 'foods',
+    ChatGroupMembers: 'ChatGroupMembers',
+    ChatGroups: 'ChatGroups',
+    ChatMessages: 'ChatMessages'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -659,7 +707,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "articles" | "articles_demo" | "orders" | "users" | "foods"
+      modelProps: "articles" | "articles_demo" | "orders" | "users" | "foods" | "chatGroupMembers" | "chatGroups" | "chatMessages"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -993,6 +1041,204 @@ export namespace Prisma {
           }
         }
       }
+      ChatGroupMembers: {
+        payload: Prisma.$ChatGroupMembersPayload<ExtArgs>
+        fields: Prisma.ChatGroupMembersFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ChatGroupMembersFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ChatGroupMembersFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload>
+          }
+          findFirst: {
+            args: Prisma.ChatGroupMembersFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ChatGroupMembersFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload>
+          }
+          findMany: {
+            args: Prisma.ChatGroupMembersFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload>[]
+          }
+          create: {
+            args: Prisma.ChatGroupMembersCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload>
+          }
+          createMany: {
+            args: Prisma.ChatGroupMembersCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.ChatGroupMembersDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload>
+          }
+          update: {
+            args: Prisma.ChatGroupMembersUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload>
+          }
+          deleteMany: {
+            args: Prisma.ChatGroupMembersDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ChatGroupMembersUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.ChatGroupMembersUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupMembersPayload>
+          }
+          aggregate: {
+            args: Prisma.ChatGroupMembersAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateChatGroupMembers>
+          }
+          groupBy: {
+            args: Prisma.ChatGroupMembersGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ChatGroupMembersGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ChatGroupMembersCountArgs<ExtArgs>
+            result: $Utils.Optional<ChatGroupMembersCountAggregateOutputType> | number
+          }
+        }
+      }
+      ChatGroups: {
+        payload: Prisma.$ChatGroupsPayload<ExtArgs>
+        fields: Prisma.ChatGroupsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ChatGroupsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ChatGroupsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload>
+          }
+          findFirst: {
+            args: Prisma.ChatGroupsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ChatGroupsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload>
+          }
+          findMany: {
+            args: Prisma.ChatGroupsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload>[]
+          }
+          create: {
+            args: Prisma.ChatGroupsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload>
+          }
+          createMany: {
+            args: Prisma.ChatGroupsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.ChatGroupsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload>
+          }
+          update: {
+            args: Prisma.ChatGroupsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload>
+          }
+          deleteMany: {
+            args: Prisma.ChatGroupsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ChatGroupsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.ChatGroupsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatGroupsPayload>
+          }
+          aggregate: {
+            args: Prisma.ChatGroupsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateChatGroups>
+          }
+          groupBy: {
+            args: Prisma.ChatGroupsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ChatGroupsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ChatGroupsCountArgs<ExtArgs>
+            result: $Utils.Optional<ChatGroupsCountAggregateOutputType> | number
+          }
+        }
+      }
+      ChatMessages: {
+        payload: Prisma.$ChatMessagesPayload<ExtArgs>
+        fields: Prisma.ChatMessagesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ChatMessagesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ChatMessagesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>
+          }
+          findFirst: {
+            args: Prisma.ChatMessagesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ChatMessagesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>
+          }
+          findMany: {
+            args: Prisma.ChatMessagesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>[]
+          }
+          create: {
+            args: Prisma.ChatMessagesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>
+          }
+          createMany: {
+            args: Prisma.ChatMessagesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.ChatMessagesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>
+          }
+          update: {
+            args: Prisma.ChatMessagesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>
+          }
+          deleteMany: {
+            args: Prisma.ChatMessagesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ChatMessagesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.ChatMessagesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ChatMessagesPayload>
+          }
+          aggregate: {
+            args: Prisma.ChatMessagesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateChatMessages>
+          }
+          groupBy: {
+            args: Prisma.ChatMessagesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ChatMessagesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ChatMessagesCountArgs<ExtArgs>
+            result: $Utils.Optional<ChatMessagesCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1106,6 +1352,9 @@ export namespace Prisma {
     orders?: OrdersOmit
     users?: UsersOmit
     foods?: foodsOmit
+    chatGroupMembers?: ChatGroupMembersOmit
+    chatGroups?: ChatGroupsOmit
+    chatMessages?: ChatMessagesOmit
   }
 
   /* Types for Logging */
@@ -1188,12 +1437,18 @@ export namespace Prisma {
   export type UsersCountOutputType = {
     Articles: number
     Articles_demo: number
+    ChatGroupMembers: number
+    ChatGroups: number
+    ChatMessages: number
     Orders: number
   }
 
   export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Articles?: boolean | UsersCountOutputTypeCountArticlesArgs
     Articles_demo?: boolean | UsersCountOutputTypeCountArticles_demoArgs
+    ChatGroupMembers?: boolean | UsersCountOutputTypeCountChatGroupMembersArgs
+    ChatGroups?: boolean | UsersCountOutputTypeCountChatGroupsArgs
+    ChatMessages?: boolean | UsersCountOutputTypeCountChatMessagesArgs
     Orders?: boolean | UsersCountOutputTypeCountOrdersArgs
   }
 
@@ -1220,6 +1475,27 @@ export namespace Prisma {
    */
   export type UsersCountOutputTypeCountArticles_demoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: Articles_demoWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountChatGroupMembersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatGroupMembersWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountChatGroupsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatGroupsWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountChatMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatMessagesWhereInput
   }
 
   /**
@@ -1258,6 +1534,46 @@ export namespace Prisma {
    */
   export type FoodsCountOutputTypeCountOrdersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: OrdersWhereInput
+  }
+
+
+  /**
+   * Count Type ChatGroupsCountOutputType
+   */
+
+  export type ChatGroupsCountOutputType = {
+    ChatGroupMembers: number
+    ChatMessages: number
+  }
+
+  export type ChatGroupsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ChatGroupMembers?: boolean | ChatGroupsCountOutputTypeCountChatGroupMembersArgs
+    ChatMessages?: boolean | ChatGroupsCountOutputTypeCountChatMessagesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ChatGroupsCountOutputType without action
+   */
+  export type ChatGroupsCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupsCountOutputType
+     */
+    select?: ChatGroupsCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ChatGroupsCountOutputType without action
+   */
+  export type ChatGroupsCountOutputTypeCountChatGroupMembersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatGroupMembersWhereInput
+  }
+
+  /**
+   * ChatGroupsCountOutputType without action
+   */
+  export type ChatGroupsCountOutputTypeCountChatMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatMessagesWhereInput
   }
 
 
@@ -4443,7 +4759,7 @@ export namespace Prisma {
   export type UsersMinAggregateOutputType = {
     id: number | null
     email: string | null
-    fullname: string | null
+    fullName: string | null
     avatar: string | null
     age: number | null
     totpSecret: string | null
@@ -4459,7 +4775,7 @@ export namespace Prisma {
   export type UsersMaxAggregateOutputType = {
     id: number | null
     email: string | null
-    fullname: string | null
+    fullName: string | null
     avatar: string | null
     age: number | null
     totpSecret: string | null
@@ -4475,7 +4791,7 @@ export namespace Prisma {
   export type UsersCountAggregateOutputType = {
     id: number
     email: number
-    fullname: number
+    fullName: number
     avatar: number
     age: number
     totpSecret: number
@@ -4505,7 +4821,7 @@ export namespace Prisma {
   export type UsersMinAggregateInputType = {
     id?: true
     email?: true
-    fullname?: true
+    fullName?: true
     avatar?: true
     age?: true
     totpSecret?: true
@@ -4521,7 +4837,7 @@ export namespace Prisma {
   export type UsersMaxAggregateInputType = {
     id?: true
     email?: true
-    fullname?: true
+    fullName?: true
     avatar?: true
     age?: true
     totpSecret?: true
@@ -4537,7 +4853,7 @@ export namespace Prisma {
   export type UsersCountAggregateInputType = {
     id?: true
     email?: true
-    fullname?: true
+    fullName?: true
     avatar?: true
     age?: true
     totpSecret?: true
@@ -4640,7 +4956,7 @@ export namespace Prisma {
   export type UsersGroupByOutputType = {
     id: number
     email: string
-    fullname: string | null
+    fullName: string | null
     avatar: string | null
     age: number | null
     totpSecret: string | null
@@ -4675,7 +4991,7 @@ export namespace Prisma {
   export type UsersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
-    fullname?: boolean
+    fullName?: boolean
     avatar?: boolean
     age?: boolean
     totpSecret?: boolean
@@ -4688,6 +5004,9 @@ export namespace Prisma {
     password?: boolean
     Articles?: boolean | Users$ArticlesArgs<ExtArgs>
     Articles_demo?: boolean | Users$Articles_demoArgs<ExtArgs>
+    ChatGroupMembers?: boolean | Users$ChatGroupMembersArgs<ExtArgs>
+    ChatGroups?: boolean | Users$ChatGroupsArgs<ExtArgs>
+    ChatMessages?: boolean | Users$ChatMessagesArgs<ExtArgs>
     Orders?: boolean | Users$OrdersArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
@@ -4697,7 +5016,7 @@ export namespace Prisma {
   export type UsersSelectScalar = {
     id?: boolean
     email?: boolean
-    fullname?: boolean
+    fullName?: boolean
     avatar?: boolean
     age?: boolean
     totpSecret?: boolean
@@ -4710,10 +5029,13 @@ export namespace Prisma {
     password?: boolean
   }
 
-  export type UsersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "fullname" | "avatar" | "age" | "totpSecret" | "googleId" | "deletedBy" | "isDeleted" | "deletedAt" | "createdAt" | "updatedAt" | "password", ExtArgs["result"]["users"]>
+  export type UsersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "fullName" | "avatar" | "age" | "totpSecret" | "googleId" | "deletedBy" | "isDeleted" | "deletedAt" | "createdAt" | "updatedAt" | "password", ExtArgs["result"]["users"]>
   export type UsersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Articles?: boolean | Users$ArticlesArgs<ExtArgs>
     Articles_demo?: boolean | Users$Articles_demoArgs<ExtArgs>
+    ChatGroupMembers?: boolean | Users$ChatGroupMembersArgs<ExtArgs>
+    ChatGroups?: boolean | Users$ChatGroupsArgs<ExtArgs>
+    ChatMessages?: boolean | Users$ChatMessagesArgs<ExtArgs>
     Orders?: boolean | Users$OrdersArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -4723,12 +5045,15 @@ export namespace Prisma {
     objects: {
       Articles: Prisma.$ArticlesPayload<ExtArgs>[]
       Articles_demo: Prisma.$Articles_demoPayload<ExtArgs>[]
+      ChatGroupMembers: Prisma.$ChatGroupMembersPayload<ExtArgs>[]
+      ChatGroups: Prisma.$ChatGroupsPayload<ExtArgs>[]
+      ChatMessages: Prisma.$ChatMessagesPayload<ExtArgs>[]
       Orders: Prisma.$OrdersPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       email: string
-      fullname: string | null
+      fullName: string | null
       avatar: string | null
       age: number | null
       totpSecret: string | null
@@ -5081,6 +5406,9 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     Articles<T extends Users$ArticlesArgs<ExtArgs> = {}>(args?: Subset<T, Users$ArticlesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ArticlesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Articles_demo<T extends Users$Articles_demoArgs<ExtArgs> = {}>(args?: Subset<T, Users$Articles_demoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Articles_demoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ChatGroupMembers<T extends Users$ChatGroupMembersArgs<ExtArgs> = {}>(args?: Subset<T, Users$ChatGroupMembersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ChatGroups<T extends Users$ChatGroupsArgs<ExtArgs> = {}>(args?: Subset<T, Users$ChatGroupsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ChatMessages<T extends Users$ChatMessagesArgs<ExtArgs> = {}>(args?: Subset<T, Users$ChatMessagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     Orders<T extends Users$OrdersArgs<ExtArgs> = {}>(args?: Subset<T, Users$OrdersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$OrdersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -5113,7 +5441,7 @@ export namespace Prisma {
   interface UsersFieldRefs {
     readonly id: FieldRef<"Users", 'Int'>
     readonly email: FieldRef<"Users", 'String'>
-    readonly fullname: FieldRef<"Users", 'String'>
+    readonly fullName: FieldRef<"Users", 'String'>
     readonly avatar: FieldRef<"Users", 'String'>
     readonly age: FieldRef<"Users", 'Int'>
     readonly totpSecret: FieldRef<"Users", 'String'>
@@ -5512,6 +5840,78 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: Articles_demoScalarFieldEnum | Articles_demoScalarFieldEnum[]
+  }
+
+  /**
+   * Users.ChatGroupMembers
+   */
+  export type Users$ChatGroupMembersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    where?: ChatGroupMembersWhereInput
+    orderBy?: ChatGroupMembersOrderByWithRelationInput | ChatGroupMembersOrderByWithRelationInput[]
+    cursor?: ChatGroupMembersWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ChatGroupMembersScalarFieldEnum | ChatGroupMembersScalarFieldEnum[]
+  }
+
+  /**
+   * Users.ChatGroups
+   */
+  export type Users$ChatGroupsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    where?: ChatGroupsWhereInput
+    orderBy?: ChatGroupsOrderByWithRelationInput | ChatGroupsOrderByWithRelationInput[]
+    cursor?: ChatGroupsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ChatGroupsScalarFieldEnum | ChatGroupsScalarFieldEnum[]
+  }
+
+  /**
+   * Users.ChatMessages
+   */
+  export type Users$ChatMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    where?: ChatMessagesWhereInput
+    orderBy?: ChatMessagesOrderByWithRelationInput | ChatMessagesOrderByWithRelationInput[]
+    cursor?: ChatMessagesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ChatMessagesScalarFieldEnum | ChatMessagesScalarFieldEnum[]
   }
 
   /**
@@ -6584,6 +6984,3198 @@ export namespace Prisma {
 
 
   /**
+   * Model ChatGroupMembers
+   */
+
+  export type AggregateChatGroupMembers = {
+    _count: ChatGroupMembersCountAggregateOutputType | null
+    _avg: ChatGroupMembersAvgAggregateOutputType | null
+    _sum: ChatGroupMembersSumAggregateOutputType | null
+    _min: ChatGroupMembersMinAggregateOutputType | null
+    _max: ChatGroupMembersMaxAggregateOutputType | null
+  }
+
+  export type ChatGroupMembersAvgAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    chatGroupId: number | null
+    deletedBy: number | null
+  }
+
+  export type ChatGroupMembersSumAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    chatGroupId: number | null
+    deletedBy: number | null
+  }
+
+  export type ChatGroupMembersMinAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    chatGroupId: number | null
+    deletedBy: number | null
+    isDeleted: boolean | null
+    deletedAt: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ChatGroupMembersMaxAggregateOutputType = {
+    id: number | null
+    userId: number | null
+    chatGroupId: number | null
+    deletedBy: number | null
+    isDeleted: boolean | null
+    deletedAt: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ChatGroupMembersCountAggregateOutputType = {
+    id: number
+    userId: number
+    chatGroupId: number
+    deletedBy: number
+    isDeleted: number
+    deletedAt: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ChatGroupMembersAvgAggregateInputType = {
+    id?: true
+    userId?: true
+    chatGroupId?: true
+    deletedBy?: true
+  }
+
+  export type ChatGroupMembersSumAggregateInputType = {
+    id?: true
+    userId?: true
+    chatGroupId?: true
+    deletedBy?: true
+  }
+
+  export type ChatGroupMembersMinAggregateInputType = {
+    id?: true
+    userId?: true
+    chatGroupId?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ChatGroupMembersMaxAggregateInputType = {
+    id?: true
+    userId?: true
+    chatGroupId?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ChatGroupMembersCountAggregateInputType = {
+    id?: true
+    userId?: true
+    chatGroupId?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ChatGroupMembersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ChatGroupMembers to aggregate.
+     */
+    where?: ChatGroupMembersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroupMembers to fetch.
+     */
+    orderBy?: ChatGroupMembersOrderByWithRelationInput | ChatGroupMembersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ChatGroupMembersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroupMembers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroupMembers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ChatGroupMembers
+    **/
+    _count?: true | ChatGroupMembersCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ChatGroupMembersAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ChatGroupMembersSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ChatGroupMembersMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ChatGroupMembersMaxAggregateInputType
+  }
+
+  export type GetChatGroupMembersAggregateType<T extends ChatGroupMembersAggregateArgs> = {
+        [P in keyof T & keyof AggregateChatGroupMembers]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateChatGroupMembers[P]>
+      : GetScalarType<T[P], AggregateChatGroupMembers[P]>
+  }
+
+
+
+
+  export type ChatGroupMembersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatGroupMembersWhereInput
+    orderBy?: ChatGroupMembersOrderByWithAggregationInput | ChatGroupMembersOrderByWithAggregationInput[]
+    by: ChatGroupMembersScalarFieldEnum[] | ChatGroupMembersScalarFieldEnum
+    having?: ChatGroupMembersScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ChatGroupMembersCountAggregateInputType | true
+    _avg?: ChatGroupMembersAvgAggregateInputType
+    _sum?: ChatGroupMembersSumAggregateInputType
+    _min?: ChatGroupMembersMinAggregateInputType
+    _max?: ChatGroupMembersMaxAggregateInputType
+  }
+
+  export type ChatGroupMembersGroupByOutputType = {
+    id: number
+    userId: number | null
+    chatGroupId: number | null
+    deletedBy: number
+    isDeleted: boolean
+    deletedAt: Date | null
+    createdAt: Date
+    updatedAt: Date
+    _count: ChatGroupMembersCountAggregateOutputType | null
+    _avg: ChatGroupMembersAvgAggregateOutputType | null
+    _sum: ChatGroupMembersSumAggregateOutputType | null
+    _min: ChatGroupMembersMinAggregateOutputType | null
+    _max: ChatGroupMembersMaxAggregateOutputType | null
+  }
+
+  type GetChatGroupMembersGroupByPayload<T extends ChatGroupMembersGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ChatGroupMembersGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ChatGroupMembersGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ChatGroupMembersGroupByOutputType[P]>
+            : GetScalarType<T[P], ChatGroupMembersGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ChatGroupMembersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    userId?: boolean
+    chatGroupId?: boolean
+    deletedBy?: boolean
+    isDeleted?: boolean
+    deletedAt?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    Users?: boolean | ChatGroupMembers$UsersArgs<ExtArgs>
+    ChatGroups?: boolean | ChatGroupMembers$ChatGroupsArgs<ExtArgs>
+  }, ExtArgs["result"]["chatGroupMembers"]>
+
+
+
+  export type ChatGroupMembersSelectScalar = {
+    id?: boolean
+    userId?: boolean
+    chatGroupId?: boolean
+    deletedBy?: boolean
+    isDeleted?: boolean
+    deletedAt?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ChatGroupMembersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "chatGroupId" | "deletedBy" | "isDeleted" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["chatGroupMembers"]>
+  export type ChatGroupMembersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Users?: boolean | ChatGroupMembers$UsersArgs<ExtArgs>
+    ChatGroups?: boolean | ChatGroupMembers$ChatGroupsArgs<ExtArgs>
+  }
+
+  export type $ChatGroupMembersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ChatGroupMembers"
+    objects: {
+      Users: Prisma.$UsersPayload<ExtArgs> | null
+      ChatGroups: Prisma.$ChatGroupsPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      userId: number | null
+      chatGroupId: number | null
+      deletedBy: number
+      isDeleted: boolean
+      deletedAt: Date | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["chatGroupMembers"]>
+    composites: {}
+  }
+
+  type ChatGroupMembersGetPayload<S extends boolean | null | undefined | ChatGroupMembersDefaultArgs> = $Result.GetResult<Prisma.$ChatGroupMembersPayload, S>
+
+  type ChatGroupMembersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ChatGroupMembersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ChatGroupMembersCountAggregateInputType | true
+    }
+
+  export interface ChatGroupMembersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ChatGroupMembers'], meta: { name: 'ChatGroupMembers' } }
+    /**
+     * Find zero or one ChatGroupMembers that matches the filter.
+     * @param {ChatGroupMembersFindUniqueArgs} args - Arguments to find a ChatGroupMembers
+     * @example
+     * // Get one ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ChatGroupMembersFindUniqueArgs>(args: SelectSubset<T, ChatGroupMembersFindUniqueArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ChatGroupMembers that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ChatGroupMembersFindUniqueOrThrowArgs} args - Arguments to find a ChatGroupMembers
+     * @example
+     * // Get one ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ChatGroupMembersFindUniqueOrThrowArgs>(args: SelectSubset<T, ChatGroupMembersFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ChatGroupMembers that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupMembersFindFirstArgs} args - Arguments to find a ChatGroupMembers
+     * @example
+     * // Get one ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ChatGroupMembersFindFirstArgs>(args?: SelectSubset<T, ChatGroupMembersFindFirstArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ChatGroupMembers that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupMembersFindFirstOrThrowArgs} args - Arguments to find a ChatGroupMembers
+     * @example
+     * // Get one ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ChatGroupMembersFindFirstOrThrowArgs>(args?: SelectSubset<T, ChatGroupMembersFindFirstOrThrowArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ChatGroupMembers that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupMembersFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.findMany()
+     * 
+     * // Get first 10 ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const chatGroupMembersWithIdOnly = await prisma.chatGroupMembers.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ChatGroupMembersFindManyArgs>(args?: SelectSubset<T, ChatGroupMembersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ChatGroupMembers.
+     * @param {ChatGroupMembersCreateArgs} args - Arguments to create a ChatGroupMembers.
+     * @example
+     * // Create one ChatGroupMembers
+     * const ChatGroupMembers = await prisma.chatGroupMembers.create({
+     *   data: {
+     *     // ... data to create a ChatGroupMembers
+     *   }
+     * })
+     * 
+     */
+    create<T extends ChatGroupMembersCreateArgs>(args: SelectSubset<T, ChatGroupMembersCreateArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ChatGroupMembers.
+     * @param {ChatGroupMembersCreateManyArgs} args - Arguments to create many ChatGroupMembers.
+     * @example
+     * // Create many ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ChatGroupMembersCreateManyArgs>(args?: SelectSubset<T, ChatGroupMembersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a ChatGroupMembers.
+     * @param {ChatGroupMembersDeleteArgs} args - Arguments to delete one ChatGroupMembers.
+     * @example
+     * // Delete one ChatGroupMembers
+     * const ChatGroupMembers = await prisma.chatGroupMembers.delete({
+     *   where: {
+     *     // ... filter to delete one ChatGroupMembers
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ChatGroupMembersDeleteArgs>(args: SelectSubset<T, ChatGroupMembersDeleteArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ChatGroupMembers.
+     * @param {ChatGroupMembersUpdateArgs} args - Arguments to update one ChatGroupMembers.
+     * @example
+     * // Update one ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ChatGroupMembersUpdateArgs>(args: SelectSubset<T, ChatGroupMembersUpdateArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ChatGroupMembers.
+     * @param {ChatGroupMembersDeleteManyArgs} args - Arguments to filter ChatGroupMembers to delete.
+     * @example
+     * // Delete a few ChatGroupMembers
+     * const { count } = await prisma.chatGroupMembers.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ChatGroupMembersDeleteManyArgs>(args?: SelectSubset<T, ChatGroupMembersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ChatGroupMembers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupMembersUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ChatGroupMembersUpdateManyArgs>(args: SelectSubset<T, ChatGroupMembersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one ChatGroupMembers.
+     * @param {ChatGroupMembersUpsertArgs} args - Arguments to update or create a ChatGroupMembers.
+     * @example
+     * // Update or create a ChatGroupMembers
+     * const chatGroupMembers = await prisma.chatGroupMembers.upsert({
+     *   create: {
+     *     // ... data to create a ChatGroupMembers
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ChatGroupMembers we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ChatGroupMembersUpsertArgs>(args: SelectSubset<T, ChatGroupMembersUpsertArgs<ExtArgs>>): Prisma__ChatGroupMembersClient<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ChatGroupMembers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupMembersCountArgs} args - Arguments to filter ChatGroupMembers to count.
+     * @example
+     * // Count the number of ChatGroupMembers
+     * const count = await prisma.chatGroupMembers.count({
+     *   where: {
+     *     // ... the filter for the ChatGroupMembers we want to count
+     *   }
+     * })
+    **/
+    count<T extends ChatGroupMembersCountArgs>(
+      args?: Subset<T, ChatGroupMembersCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ChatGroupMembersCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ChatGroupMembers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupMembersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ChatGroupMembersAggregateArgs>(args: Subset<T, ChatGroupMembersAggregateArgs>): Prisma.PrismaPromise<GetChatGroupMembersAggregateType<T>>
+
+    /**
+     * Group by ChatGroupMembers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupMembersGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ChatGroupMembersGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ChatGroupMembersGroupByArgs['orderBy'] }
+        : { orderBy?: ChatGroupMembersGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ChatGroupMembersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetChatGroupMembersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ChatGroupMembers model
+   */
+  readonly fields: ChatGroupMembersFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ChatGroupMembers.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ChatGroupMembersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    Users<T extends ChatGroupMembers$UsersArgs<ExtArgs> = {}>(args?: Subset<T, ChatGroupMembers$UsersArgs<ExtArgs>>): Prisma__UsersClient<$Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    ChatGroups<T extends ChatGroupMembers$ChatGroupsArgs<ExtArgs> = {}>(args?: Subset<T, ChatGroupMembers$ChatGroupsArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ChatGroupMembers model
+   */
+  interface ChatGroupMembersFieldRefs {
+    readonly id: FieldRef<"ChatGroupMembers", 'Int'>
+    readonly userId: FieldRef<"ChatGroupMembers", 'Int'>
+    readonly chatGroupId: FieldRef<"ChatGroupMembers", 'Int'>
+    readonly deletedBy: FieldRef<"ChatGroupMembers", 'Int'>
+    readonly isDeleted: FieldRef<"ChatGroupMembers", 'Boolean'>
+    readonly deletedAt: FieldRef<"ChatGroupMembers", 'DateTime'>
+    readonly createdAt: FieldRef<"ChatGroupMembers", 'DateTime'>
+    readonly updatedAt: FieldRef<"ChatGroupMembers", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ChatGroupMembers findUnique
+   */
+  export type ChatGroupMembersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroupMembers to fetch.
+     */
+    where: ChatGroupMembersWhereUniqueInput
+  }
+
+  /**
+   * ChatGroupMembers findUniqueOrThrow
+   */
+  export type ChatGroupMembersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroupMembers to fetch.
+     */
+    where: ChatGroupMembersWhereUniqueInput
+  }
+
+  /**
+   * ChatGroupMembers findFirst
+   */
+  export type ChatGroupMembersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroupMembers to fetch.
+     */
+    where?: ChatGroupMembersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroupMembers to fetch.
+     */
+    orderBy?: ChatGroupMembersOrderByWithRelationInput | ChatGroupMembersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ChatGroupMembers.
+     */
+    cursor?: ChatGroupMembersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroupMembers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroupMembers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ChatGroupMembers.
+     */
+    distinct?: ChatGroupMembersScalarFieldEnum | ChatGroupMembersScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroupMembers findFirstOrThrow
+   */
+  export type ChatGroupMembersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroupMembers to fetch.
+     */
+    where?: ChatGroupMembersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroupMembers to fetch.
+     */
+    orderBy?: ChatGroupMembersOrderByWithRelationInput | ChatGroupMembersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ChatGroupMembers.
+     */
+    cursor?: ChatGroupMembersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroupMembers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroupMembers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ChatGroupMembers.
+     */
+    distinct?: ChatGroupMembersScalarFieldEnum | ChatGroupMembersScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroupMembers findMany
+   */
+  export type ChatGroupMembersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroupMembers to fetch.
+     */
+    where?: ChatGroupMembersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroupMembers to fetch.
+     */
+    orderBy?: ChatGroupMembersOrderByWithRelationInput | ChatGroupMembersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ChatGroupMembers.
+     */
+    cursor?: ChatGroupMembersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroupMembers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroupMembers.
+     */
+    skip?: number
+    distinct?: ChatGroupMembersScalarFieldEnum | ChatGroupMembersScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroupMembers create
+   */
+  export type ChatGroupMembersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ChatGroupMembers.
+     */
+    data?: XOR<ChatGroupMembersCreateInput, ChatGroupMembersUncheckedCreateInput>
+  }
+
+  /**
+   * ChatGroupMembers createMany
+   */
+  export type ChatGroupMembersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ChatGroupMembers.
+     */
+    data: ChatGroupMembersCreateManyInput | ChatGroupMembersCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ChatGroupMembers update
+   */
+  export type ChatGroupMembersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ChatGroupMembers.
+     */
+    data: XOR<ChatGroupMembersUpdateInput, ChatGroupMembersUncheckedUpdateInput>
+    /**
+     * Choose, which ChatGroupMembers to update.
+     */
+    where: ChatGroupMembersWhereUniqueInput
+  }
+
+  /**
+   * ChatGroupMembers updateMany
+   */
+  export type ChatGroupMembersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ChatGroupMembers.
+     */
+    data: XOR<ChatGroupMembersUpdateManyMutationInput, ChatGroupMembersUncheckedUpdateManyInput>
+    /**
+     * Filter which ChatGroupMembers to update
+     */
+    where?: ChatGroupMembersWhereInput
+    /**
+     * Limit how many ChatGroupMembers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ChatGroupMembers upsert
+   */
+  export type ChatGroupMembersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ChatGroupMembers to update in case it exists.
+     */
+    where: ChatGroupMembersWhereUniqueInput
+    /**
+     * In case the ChatGroupMembers found by the `where` argument doesn't exist, create a new ChatGroupMembers with this data.
+     */
+    create: XOR<ChatGroupMembersCreateInput, ChatGroupMembersUncheckedCreateInput>
+    /**
+     * In case the ChatGroupMembers was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ChatGroupMembersUpdateInput, ChatGroupMembersUncheckedUpdateInput>
+  }
+
+  /**
+   * ChatGroupMembers delete
+   */
+  export type ChatGroupMembersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    /**
+     * Filter which ChatGroupMembers to delete.
+     */
+    where: ChatGroupMembersWhereUniqueInput
+  }
+
+  /**
+   * ChatGroupMembers deleteMany
+   */
+  export type ChatGroupMembersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ChatGroupMembers to delete
+     */
+    where?: ChatGroupMembersWhereInput
+    /**
+     * Limit how many ChatGroupMembers to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ChatGroupMembers.Users
+   */
+  export type ChatGroupMembers$UsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Users
+     */
+    select?: UsersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Users
+     */
+    omit?: UsersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsersInclude<ExtArgs> | null
+    where?: UsersWhereInput
+  }
+
+  /**
+   * ChatGroupMembers.ChatGroups
+   */
+  export type ChatGroupMembers$ChatGroupsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    where?: ChatGroupsWhereInput
+  }
+
+  /**
+   * ChatGroupMembers without action
+   */
+  export type ChatGroupMembersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ChatGroups
+   */
+
+  export type AggregateChatGroups = {
+    _count: ChatGroupsCountAggregateOutputType | null
+    _avg: ChatGroupsAvgAggregateOutputType | null
+    _sum: ChatGroupsSumAggregateOutputType | null
+    _min: ChatGroupsMinAggregateOutputType | null
+    _max: ChatGroupsMaxAggregateOutputType | null
+  }
+
+  export type ChatGroupsAvgAggregateOutputType = {
+    id: number | null
+    ownerId: number | null
+    deletedBy: number | null
+  }
+
+  export type ChatGroupsSumAggregateOutputType = {
+    id: number | null
+    ownerId: number | null
+    deletedBy: number | null
+  }
+
+  export type ChatGroupsMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    ownerId: number | null
+    deletedBy: number | null
+    isDeleted: boolean | null
+    deletedAt: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ChatGroupsMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    ownerId: number | null
+    deletedBy: number | null
+    isDeleted: boolean | null
+    deletedAt: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ChatGroupsCountAggregateOutputType = {
+    id: number
+    name: number
+    ownerId: number
+    deletedBy: number
+    isDeleted: number
+    deletedAt: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ChatGroupsAvgAggregateInputType = {
+    id?: true
+    ownerId?: true
+    deletedBy?: true
+  }
+
+  export type ChatGroupsSumAggregateInputType = {
+    id?: true
+    ownerId?: true
+    deletedBy?: true
+  }
+
+  export type ChatGroupsMinAggregateInputType = {
+    id?: true
+    name?: true
+    ownerId?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ChatGroupsMaxAggregateInputType = {
+    id?: true
+    name?: true
+    ownerId?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ChatGroupsCountAggregateInputType = {
+    id?: true
+    name?: true
+    ownerId?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ChatGroupsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ChatGroups to aggregate.
+     */
+    where?: ChatGroupsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroups to fetch.
+     */
+    orderBy?: ChatGroupsOrderByWithRelationInput | ChatGroupsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ChatGroupsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroups from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroups.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ChatGroups
+    **/
+    _count?: true | ChatGroupsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ChatGroupsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ChatGroupsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ChatGroupsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ChatGroupsMaxAggregateInputType
+  }
+
+  export type GetChatGroupsAggregateType<T extends ChatGroupsAggregateArgs> = {
+        [P in keyof T & keyof AggregateChatGroups]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateChatGroups[P]>
+      : GetScalarType<T[P], AggregateChatGroups[P]>
+  }
+
+
+
+
+  export type ChatGroupsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatGroupsWhereInput
+    orderBy?: ChatGroupsOrderByWithAggregationInput | ChatGroupsOrderByWithAggregationInput[]
+    by: ChatGroupsScalarFieldEnum[] | ChatGroupsScalarFieldEnum
+    having?: ChatGroupsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ChatGroupsCountAggregateInputType | true
+    _avg?: ChatGroupsAvgAggregateInputType
+    _sum?: ChatGroupsSumAggregateInputType
+    _min?: ChatGroupsMinAggregateInputType
+    _max?: ChatGroupsMaxAggregateInputType
+  }
+
+  export type ChatGroupsGroupByOutputType = {
+    id: number
+    name: string | null
+    ownerId: number | null
+    deletedBy: number
+    isDeleted: boolean
+    deletedAt: Date | null
+    createdAt: Date
+    updatedAt: Date
+    _count: ChatGroupsCountAggregateOutputType | null
+    _avg: ChatGroupsAvgAggregateOutputType | null
+    _sum: ChatGroupsSumAggregateOutputType | null
+    _min: ChatGroupsMinAggregateOutputType | null
+    _max: ChatGroupsMaxAggregateOutputType | null
+  }
+
+  type GetChatGroupsGroupByPayload<T extends ChatGroupsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ChatGroupsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ChatGroupsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ChatGroupsGroupByOutputType[P]>
+            : GetScalarType<T[P], ChatGroupsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ChatGroupsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    ownerId?: boolean
+    deletedBy?: boolean
+    isDeleted?: boolean
+    deletedAt?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    ChatGroupMembers?: boolean | ChatGroups$ChatGroupMembersArgs<ExtArgs>
+    Users?: boolean | ChatGroups$UsersArgs<ExtArgs>
+    ChatMessages?: boolean | ChatGroups$ChatMessagesArgs<ExtArgs>
+    _count?: boolean | ChatGroupsCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["chatGroups"]>
+
+
+
+  export type ChatGroupsSelectScalar = {
+    id?: boolean
+    name?: boolean
+    ownerId?: boolean
+    deletedBy?: boolean
+    isDeleted?: boolean
+    deletedAt?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ChatGroupsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "ownerId" | "deletedBy" | "isDeleted" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["chatGroups"]>
+  export type ChatGroupsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ChatGroupMembers?: boolean | ChatGroups$ChatGroupMembersArgs<ExtArgs>
+    Users?: boolean | ChatGroups$UsersArgs<ExtArgs>
+    ChatMessages?: boolean | ChatGroups$ChatMessagesArgs<ExtArgs>
+    _count?: boolean | ChatGroupsCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $ChatGroupsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ChatGroups"
+    objects: {
+      ChatGroupMembers: Prisma.$ChatGroupMembersPayload<ExtArgs>[]
+      Users: Prisma.$UsersPayload<ExtArgs> | null
+      ChatMessages: Prisma.$ChatMessagesPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string | null
+      ownerId: number | null
+      deletedBy: number
+      isDeleted: boolean
+      deletedAt: Date | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["chatGroups"]>
+    composites: {}
+  }
+
+  type ChatGroupsGetPayload<S extends boolean | null | undefined | ChatGroupsDefaultArgs> = $Result.GetResult<Prisma.$ChatGroupsPayload, S>
+
+  type ChatGroupsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ChatGroupsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ChatGroupsCountAggregateInputType | true
+    }
+
+  export interface ChatGroupsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ChatGroups'], meta: { name: 'ChatGroups' } }
+    /**
+     * Find zero or one ChatGroups that matches the filter.
+     * @param {ChatGroupsFindUniqueArgs} args - Arguments to find a ChatGroups
+     * @example
+     * // Get one ChatGroups
+     * const chatGroups = await prisma.chatGroups.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ChatGroupsFindUniqueArgs>(args: SelectSubset<T, ChatGroupsFindUniqueArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ChatGroups that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ChatGroupsFindUniqueOrThrowArgs} args - Arguments to find a ChatGroups
+     * @example
+     * // Get one ChatGroups
+     * const chatGroups = await prisma.chatGroups.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ChatGroupsFindUniqueOrThrowArgs>(args: SelectSubset<T, ChatGroupsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ChatGroups that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupsFindFirstArgs} args - Arguments to find a ChatGroups
+     * @example
+     * // Get one ChatGroups
+     * const chatGroups = await prisma.chatGroups.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ChatGroupsFindFirstArgs>(args?: SelectSubset<T, ChatGroupsFindFirstArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ChatGroups that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupsFindFirstOrThrowArgs} args - Arguments to find a ChatGroups
+     * @example
+     * // Get one ChatGroups
+     * const chatGroups = await prisma.chatGroups.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ChatGroupsFindFirstOrThrowArgs>(args?: SelectSubset<T, ChatGroupsFindFirstOrThrowArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ChatGroups that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ChatGroups
+     * const chatGroups = await prisma.chatGroups.findMany()
+     * 
+     * // Get first 10 ChatGroups
+     * const chatGroups = await prisma.chatGroups.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const chatGroupsWithIdOnly = await prisma.chatGroups.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ChatGroupsFindManyArgs>(args?: SelectSubset<T, ChatGroupsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ChatGroups.
+     * @param {ChatGroupsCreateArgs} args - Arguments to create a ChatGroups.
+     * @example
+     * // Create one ChatGroups
+     * const ChatGroups = await prisma.chatGroups.create({
+     *   data: {
+     *     // ... data to create a ChatGroups
+     *   }
+     * })
+     * 
+     */
+    create<T extends ChatGroupsCreateArgs>(args: SelectSubset<T, ChatGroupsCreateArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ChatGroups.
+     * @param {ChatGroupsCreateManyArgs} args - Arguments to create many ChatGroups.
+     * @example
+     * // Create many ChatGroups
+     * const chatGroups = await prisma.chatGroups.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ChatGroupsCreateManyArgs>(args?: SelectSubset<T, ChatGroupsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a ChatGroups.
+     * @param {ChatGroupsDeleteArgs} args - Arguments to delete one ChatGroups.
+     * @example
+     * // Delete one ChatGroups
+     * const ChatGroups = await prisma.chatGroups.delete({
+     *   where: {
+     *     // ... filter to delete one ChatGroups
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ChatGroupsDeleteArgs>(args: SelectSubset<T, ChatGroupsDeleteArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ChatGroups.
+     * @param {ChatGroupsUpdateArgs} args - Arguments to update one ChatGroups.
+     * @example
+     * // Update one ChatGroups
+     * const chatGroups = await prisma.chatGroups.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ChatGroupsUpdateArgs>(args: SelectSubset<T, ChatGroupsUpdateArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ChatGroups.
+     * @param {ChatGroupsDeleteManyArgs} args - Arguments to filter ChatGroups to delete.
+     * @example
+     * // Delete a few ChatGroups
+     * const { count } = await prisma.chatGroups.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ChatGroupsDeleteManyArgs>(args?: SelectSubset<T, ChatGroupsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ChatGroups.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ChatGroups
+     * const chatGroups = await prisma.chatGroups.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ChatGroupsUpdateManyArgs>(args: SelectSubset<T, ChatGroupsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one ChatGroups.
+     * @param {ChatGroupsUpsertArgs} args - Arguments to update or create a ChatGroups.
+     * @example
+     * // Update or create a ChatGroups
+     * const chatGroups = await prisma.chatGroups.upsert({
+     *   create: {
+     *     // ... data to create a ChatGroups
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ChatGroups we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ChatGroupsUpsertArgs>(args: SelectSubset<T, ChatGroupsUpsertArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ChatGroups.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupsCountArgs} args - Arguments to filter ChatGroups to count.
+     * @example
+     * // Count the number of ChatGroups
+     * const count = await prisma.chatGroups.count({
+     *   where: {
+     *     // ... the filter for the ChatGroups we want to count
+     *   }
+     * })
+    **/
+    count<T extends ChatGroupsCountArgs>(
+      args?: Subset<T, ChatGroupsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ChatGroupsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ChatGroups.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ChatGroupsAggregateArgs>(args: Subset<T, ChatGroupsAggregateArgs>): Prisma.PrismaPromise<GetChatGroupsAggregateType<T>>
+
+    /**
+     * Group by ChatGroups.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatGroupsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ChatGroupsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ChatGroupsGroupByArgs['orderBy'] }
+        : { orderBy?: ChatGroupsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ChatGroupsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetChatGroupsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ChatGroups model
+   */
+  readonly fields: ChatGroupsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ChatGroups.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ChatGroupsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    ChatGroupMembers<T extends ChatGroups$ChatGroupMembersArgs<ExtArgs> = {}>(args?: Subset<T, ChatGroups$ChatGroupMembersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatGroupMembersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    Users<T extends ChatGroups$UsersArgs<ExtArgs> = {}>(args?: Subset<T, ChatGroups$UsersArgs<ExtArgs>>): Prisma__UsersClient<$Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    ChatMessages<T extends ChatGroups$ChatMessagesArgs<ExtArgs> = {}>(args?: Subset<T, ChatGroups$ChatMessagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ChatGroups model
+   */
+  interface ChatGroupsFieldRefs {
+    readonly id: FieldRef<"ChatGroups", 'Int'>
+    readonly name: FieldRef<"ChatGroups", 'String'>
+    readonly ownerId: FieldRef<"ChatGroups", 'Int'>
+    readonly deletedBy: FieldRef<"ChatGroups", 'Int'>
+    readonly isDeleted: FieldRef<"ChatGroups", 'Boolean'>
+    readonly deletedAt: FieldRef<"ChatGroups", 'DateTime'>
+    readonly createdAt: FieldRef<"ChatGroups", 'DateTime'>
+    readonly updatedAt: FieldRef<"ChatGroups", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ChatGroups findUnique
+   */
+  export type ChatGroupsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroups to fetch.
+     */
+    where: ChatGroupsWhereUniqueInput
+  }
+
+  /**
+   * ChatGroups findUniqueOrThrow
+   */
+  export type ChatGroupsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroups to fetch.
+     */
+    where: ChatGroupsWhereUniqueInput
+  }
+
+  /**
+   * ChatGroups findFirst
+   */
+  export type ChatGroupsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroups to fetch.
+     */
+    where?: ChatGroupsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroups to fetch.
+     */
+    orderBy?: ChatGroupsOrderByWithRelationInput | ChatGroupsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ChatGroups.
+     */
+    cursor?: ChatGroupsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroups from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroups.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ChatGroups.
+     */
+    distinct?: ChatGroupsScalarFieldEnum | ChatGroupsScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroups findFirstOrThrow
+   */
+  export type ChatGroupsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroups to fetch.
+     */
+    where?: ChatGroupsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroups to fetch.
+     */
+    orderBy?: ChatGroupsOrderByWithRelationInput | ChatGroupsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ChatGroups.
+     */
+    cursor?: ChatGroupsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroups from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroups.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ChatGroups.
+     */
+    distinct?: ChatGroupsScalarFieldEnum | ChatGroupsScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroups findMany
+   */
+  export type ChatGroupsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatGroups to fetch.
+     */
+    where?: ChatGroupsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatGroups to fetch.
+     */
+    orderBy?: ChatGroupsOrderByWithRelationInput | ChatGroupsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ChatGroups.
+     */
+    cursor?: ChatGroupsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatGroups from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatGroups.
+     */
+    skip?: number
+    distinct?: ChatGroupsScalarFieldEnum | ChatGroupsScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroups create
+   */
+  export type ChatGroupsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ChatGroups.
+     */
+    data?: XOR<ChatGroupsCreateInput, ChatGroupsUncheckedCreateInput>
+  }
+
+  /**
+   * ChatGroups createMany
+   */
+  export type ChatGroupsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ChatGroups.
+     */
+    data: ChatGroupsCreateManyInput | ChatGroupsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ChatGroups update
+   */
+  export type ChatGroupsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ChatGroups.
+     */
+    data: XOR<ChatGroupsUpdateInput, ChatGroupsUncheckedUpdateInput>
+    /**
+     * Choose, which ChatGroups to update.
+     */
+    where: ChatGroupsWhereUniqueInput
+  }
+
+  /**
+   * ChatGroups updateMany
+   */
+  export type ChatGroupsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ChatGroups.
+     */
+    data: XOR<ChatGroupsUpdateManyMutationInput, ChatGroupsUncheckedUpdateManyInput>
+    /**
+     * Filter which ChatGroups to update
+     */
+    where?: ChatGroupsWhereInput
+    /**
+     * Limit how many ChatGroups to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ChatGroups upsert
+   */
+  export type ChatGroupsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ChatGroups to update in case it exists.
+     */
+    where: ChatGroupsWhereUniqueInput
+    /**
+     * In case the ChatGroups found by the `where` argument doesn't exist, create a new ChatGroups with this data.
+     */
+    create: XOR<ChatGroupsCreateInput, ChatGroupsUncheckedCreateInput>
+    /**
+     * In case the ChatGroups was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ChatGroupsUpdateInput, ChatGroupsUncheckedUpdateInput>
+  }
+
+  /**
+   * ChatGroups delete
+   */
+  export type ChatGroupsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    /**
+     * Filter which ChatGroups to delete.
+     */
+    where: ChatGroupsWhereUniqueInput
+  }
+
+  /**
+   * ChatGroups deleteMany
+   */
+  export type ChatGroupsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ChatGroups to delete
+     */
+    where?: ChatGroupsWhereInput
+    /**
+     * Limit how many ChatGroups to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ChatGroups.ChatGroupMembers
+   */
+  export type ChatGroups$ChatGroupMembersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroupMembers
+     */
+    select?: ChatGroupMembersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroupMembers
+     */
+    omit?: ChatGroupMembersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupMembersInclude<ExtArgs> | null
+    where?: ChatGroupMembersWhereInput
+    orderBy?: ChatGroupMembersOrderByWithRelationInput | ChatGroupMembersOrderByWithRelationInput[]
+    cursor?: ChatGroupMembersWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ChatGroupMembersScalarFieldEnum | ChatGroupMembersScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroups.Users
+   */
+  export type ChatGroups$UsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Users
+     */
+    select?: UsersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Users
+     */
+    omit?: UsersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsersInclude<ExtArgs> | null
+    where?: UsersWhereInput
+  }
+
+  /**
+   * ChatGroups.ChatMessages
+   */
+  export type ChatGroups$ChatMessagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    where?: ChatMessagesWhereInput
+    orderBy?: ChatMessagesOrderByWithRelationInput | ChatMessagesOrderByWithRelationInput[]
+    cursor?: ChatMessagesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ChatMessagesScalarFieldEnum | ChatMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * ChatGroups without action
+   */
+  export type ChatGroupsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ChatMessages
+   */
+
+  export type AggregateChatMessages = {
+    _count: ChatMessagesCountAggregateOutputType | null
+    _avg: ChatMessagesAvgAggregateOutputType | null
+    _sum: ChatMessagesSumAggregateOutputType | null
+    _min: ChatMessagesMinAggregateOutputType | null
+    _max: ChatMessagesMaxAggregateOutputType | null
+  }
+
+  export type ChatMessagesAvgAggregateOutputType = {
+    id: number | null
+    chatGroupId: number | null
+    userIdSender: number | null
+    deletedBy: number | null
+  }
+
+  export type ChatMessagesSumAggregateOutputType = {
+    id: number | null
+    chatGroupId: number | null
+    userIdSender: number | null
+    deletedBy: number | null
+  }
+
+  export type ChatMessagesMinAggregateOutputType = {
+    id: number | null
+    chatGroupId: number | null
+    userIdSender: number | null
+    messageText: string | null
+    deletedBy: number | null
+    isDeleted: boolean | null
+    deletedAt: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ChatMessagesMaxAggregateOutputType = {
+    id: number | null
+    chatGroupId: number | null
+    userIdSender: number | null
+    messageText: string | null
+    deletedBy: number | null
+    isDeleted: boolean | null
+    deletedAt: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ChatMessagesCountAggregateOutputType = {
+    id: number
+    chatGroupId: number
+    userIdSender: number
+    messageText: number
+    deletedBy: number
+    isDeleted: number
+    deletedAt: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ChatMessagesAvgAggregateInputType = {
+    id?: true
+    chatGroupId?: true
+    userIdSender?: true
+    deletedBy?: true
+  }
+
+  export type ChatMessagesSumAggregateInputType = {
+    id?: true
+    chatGroupId?: true
+    userIdSender?: true
+    deletedBy?: true
+  }
+
+  export type ChatMessagesMinAggregateInputType = {
+    id?: true
+    chatGroupId?: true
+    userIdSender?: true
+    messageText?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ChatMessagesMaxAggregateInputType = {
+    id?: true
+    chatGroupId?: true
+    userIdSender?: true
+    messageText?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ChatMessagesCountAggregateInputType = {
+    id?: true
+    chatGroupId?: true
+    userIdSender?: true
+    messageText?: true
+    deletedBy?: true
+    isDeleted?: true
+    deletedAt?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ChatMessagesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ChatMessages to aggregate.
+     */
+    where?: ChatMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatMessages to fetch.
+     */
+    orderBy?: ChatMessagesOrderByWithRelationInput | ChatMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ChatMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ChatMessages
+    **/
+    _count?: true | ChatMessagesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ChatMessagesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ChatMessagesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ChatMessagesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ChatMessagesMaxAggregateInputType
+  }
+
+  export type GetChatMessagesAggregateType<T extends ChatMessagesAggregateArgs> = {
+        [P in keyof T & keyof AggregateChatMessages]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateChatMessages[P]>
+      : GetScalarType<T[P], AggregateChatMessages[P]>
+  }
+
+
+
+
+  export type ChatMessagesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ChatMessagesWhereInput
+    orderBy?: ChatMessagesOrderByWithAggregationInput | ChatMessagesOrderByWithAggregationInput[]
+    by: ChatMessagesScalarFieldEnum[] | ChatMessagesScalarFieldEnum
+    having?: ChatMessagesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ChatMessagesCountAggregateInputType | true
+    _avg?: ChatMessagesAvgAggregateInputType
+    _sum?: ChatMessagesSumAggregateInputType
+    _min?: ChatMessagesMinAggregateInputType
+    _max?: ChatMessagesMaxAggregateInputType
+  }
+
+  export type ChatMessagesGroupByOutputType = {
+    id: number
+    chatGroupId: number | null
+    userIdSender: number | null
+    messageText: string | null
+    deletedBy: number
+    isDeleted: boolean
+    deletedAt: Date | null
+    createdAt: Date
+    updatedAt: Date
+    _count: ChatMessagesCountAggregateOutputType | null
+    _avg: ChatMessagesAvgAggregateOutputType | null
+    _sum: ChatMessagesSumAggregateOutputType | null
+    _min: ChatMessagesMinAggregateOutputType | null
+    _max: ChatMessagesMaxAggregateOutputType | null
+  }
+
+  type GetChatMessagesGroupByPayload<T extends ChatMessagesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ChatMessagesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ChatMessagesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ChatMessagesGroupByOutputType[P]>
+            : GetScalarType<T[P], ChatMessagesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ChatMessagesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    chatGroupId?: boolean
+    userIdSender?: boolean
+    messageText?: boolean
+    deletedBy?: boolean
+    isDeleted?: boolean
+    deletedAt?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    ChatGroups?: boolean | ChatMessages$ChatGroupsArgs<ExtArgs>
+    Users?: boolean | ChatMessages$UsersArgs<ExtArgs>
+  }, ExtArgs["result"]["chatMessages"]>
+
+
+
+  export type ChatMessagesSelectScalar = {
+    id?: boolean
+    chatGroupId?: boolean
+    userIdSender?: boolean
+    messageText?: boolean
+    deletedBy?: boolean
+    isDeleted?: boolean
+    deletedAt?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ChatMessagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "chatGroupId" | "userIdSender" | "messageText" | "deletedBy" | "isDeleted" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["chatMessages"]>
+  export type ChatMessagesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ChatGroups?: boolean | ChatMessages$ChatGroupsArgs<ExtArgs>
+    Users?: boolean | ChatMessages$UsersArgs<ExtArgs>
+  }
+
+  export type $ChatMessagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ChatMessages"
+    objects: {
+      ChatGroups: Prisma.$ChatGroupsPayload<ExtArgs> | null
+      Users: Prisma.$UsersPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      chatGroupId: number | null
+      userIdSender: number | null
+      messageText: string | null
+      deletedBy: number
+      isDeleted: boolean
+      deletedAt: Date | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["chatMessages"]>
+    composites: {}
+  }
+
+  type ChatMessagesGetPayload<S extends boolean | null | undefined | ChatMessagesDefaultArgs> = $Result.GetResult<Prisma.$ChatMessagesPayload, S>
+
+  type ChatMessagesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ChatMessagesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ChatMessagesCountAggregateInputType | true
+    }
+
+  export interface ChatMessagesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ChatMessages'], meta: { name: 'ChatMessages' } }
+    /**
+     * Find zero or one ChatMessages that matches the filter.
+     * @param {ChatMessagesFindUniqueArgs} args - Arguments to find a ChatMessages
+     * @example
+     * // Get one ChatMessages
+     * const chatMessages = await prisma.chatMessages.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ChatMessagesFindUniqueArgs>(args: SelectSubset<T, ChatMessagesFindUniqueArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ChatMessages that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ChatMessagesFindUniqueOrThrowArgs} args - Arguments to find a ChatMessages
+     * @example
+     * // Get one ChatMessages
+     * const chatMessages = await prisma.chatMessages.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ChatMessagesFindUniqueOrThrowArgs>(args: SelectSubset<T, ChatMessagesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ChatMessages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatMessagesFindFirstArgs} args - Arguments to find a ChatMessages
+     * @example
+     * // Get one ChatMessages
+     * const chatMessages = await prisma.chatMessages.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ChatMessagesFindFirstArgs>(args?: SelectSubset<T, ChatMessagesFindFirstArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ChatMessages that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatMessagesFindFirstOrThrowArgs} args - Arguments to find a ChatMessages
+     * @example
+     * // Get one ChatMessages
+     * const chatMessages = await prisma.chatMessages.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ChatMessagesFindFirstOrThrowArgs>(args?: SelectSubset<T, ChatMessagesFindFirstOrThrowArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ChatMessages that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatMessagesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ChatMessages
+     * const chatMessages = await prisma.chatMessages.findMany()
+     * 
+     * // Get first 10 ChatMessages
+     * const chatMessages = await prisma.chatMessages.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const chatMessagesWithIdOnly = await prisma.chatMessages.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ChatMessagesFindManyArgs>(args?: SelectSubset<T, ChatMessagesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ChatMessages.
+     * @param {ChatMessagesCreateArgs} args - Arguments to create a ChatMessages.
+     * @example
+     * // Create one ChatMessages
+     * const ChatMessages = await prisma.chatMessages.create({
+     *   data: {
+     *     // ... data to create a ChatMessages
+     *   }
+     * })
+     * 
+     */
+    create<T extends ChatMessagesCreateArgs>(args: SelectSubset<T, ChatMessagesCreateArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ChatMessages.
+     * @param {ChatMessagesCreateManyArgs} args - Arguments to create many ChatMessages.
+     * @example
+     * // Create many ChatMessages
+     * const chatMessages = await prisma.chatMessages.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ChatMessagesCreateManyArgs>(args?: SelectSubset<T, ChatMessagesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a ChatMessages.
+     * @param {ChatMessagesDeleteArgs} args - Arguments to delete one ChatMessages.
+     * @example
+     * // Delete one ChatMessages
+     * const ChatMessages = await prisma.chatMessages.delete({
+     *   where: {
+     *     // ... filter to delete one ChatMessages
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ChatMessagesDeleteArgs>(args: SelectSubset<T, ChatMessagesDeleteArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ChatMessages.
+     * @param {ChatMessagesUpdateArgs} args - Arguments to update one ChatMessages.
+     * @example
+     * // Update one ChatMessages
+     * const chatMessages = await prisma.chatMessages.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ChatMessagesUpdateArgs>(args: SelectSubset<T, ChatMessagesUpdateArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ChatMessages.
+     * @param {ChatMessagesDeleteManyArgs} args - Arguments to filter ChatMessages to delete.
+     * @example
+     * // Delete a few ChatMessages
+     * const { count } = await prisma.chatMessages.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ChatMessagesDeleteManyArgs>(args?: SelectSubset<T, ChatMessagesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ChatMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatMessagesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ChatMessages
+     * const chatMessages = await prisma.chatMessages.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ChatMessagesUpdateManyArgs>(args: SelectSubset<T, ChatMessagesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one ChatMessages.
+     * @param {ChatMessagesUpsertArgs} args - Arguments to update or create a ChatMessages.
+     * @example
+     * // Update or create a ChatMessages
+     * const chatMessages = await prisma.chatMessages.upsert({
+     *   create: {
+     *     // ... data to create a ChatMessages
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ChatMessages we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ChatMessagesUpsertArgs>(args: SelectSubset<T, ChatMessagesUpsertArgs<ExtArgs>>): Prisma__ChatMessagesClient<$Result.GetResult<Prisma.$ChatMessagesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ChatMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatMessagesCountArgs} args - Arguments to filter ChatMessages to count.
+     * @example
+     * // Count the number of ChatMessages
+     * const count = await prisma.chatMessages.count({
+     *   where: {
+     *     // ... the filter for the ChatMessages we want to count
+     *   }
+     * })
+    **/
+    count<T extends ChatMessagesCountArgs>(
+      args?: Subset<T, ChatMessagesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ChatMessagesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ChatMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatMessagesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ChatMessagesAggregateArgs>(args: Subset<T, ChatMessagesAggregateArgs>): Prisma.PrismaPromise<GetChatMessagesAggregateType<T>>
+
+    /**
+     * Group by ChatMessages.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ChatMessagesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ChatMessagesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ChatMessagesGroupByArgs['orderBy'] }
+        : { orderBy?: ChatMessagesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ChatMessagesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetChatMessagesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ChatMessages model
+   */
+  readonly fields: ChatMessagesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ChatMessages.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ChatMessagesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    ChatGroups<T extends ChatMessages$ChatGroupsArgs<ExtArgs> = {}>(args?: Subset<T, ChatMessages$ChatGroupsArgs<ExtArgs>>): Prisma__ChatGroupsClient<$Result.GetResult<Prisma.$ChatGroupsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    Users<T extends ChatMessages$UsersArgs<ExtArgs> = {}>(args?: Subset<T, ChatMessages$UsersArgs<ExtArgs>>): Prisma__UsersClient<$Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ChatMessages model
+   */
+  interface ChatMessagesFieldRefs {
+    readonly id: FieldRef<"ChatMessages", 'Int'>
+    readonly chatGroupId: FieldRef<"ChatMessages", 'Int'>
+    readonly userIdSender: FieldRef<"ChatMessages", 'Int'>
+    readonly messageText: FieldRef<"ChatMessages", 'String'>
+    readonly deletedBy: FieldRef<"ChatMessages", 'Int'>
+    readonly isDeleted: FieldRef<"ChatMessages", 'Boolean'>
+    readonly deletedAt: FieldRef<"ChatMessages", 'DateTime'>
+    readonly createdAt: FieldRef<"ChatMessages", 'DateTime'>
+    readonly updatedAt: FieldRef<"ChatMessages", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ChatMessages findUnique
+   */
+  export type ChatMessagesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatMessages to fetch.
+     */
+    where: ChatMessagesWhereUniqueInput
+  }
+
+  /**
+   * ChatMessages findUniqueOrThrow
+   */
+  export type ChatMessagesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatMessages to fetch.
+     */
+    where: ChatMessagesWhereUniqueInput
+  }
+
+  /**
+   * ChatMessages findFirst
+   */
+  export type ChatMessagesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatMessages to fetch.
+     */
+    where?: ChatMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatMessages to fetch.
+     */
+    orderBy?: ChatMessagesOrderByWithRelationInput | ChatMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ChatMessages.
+     */
+    cursor?: ChatMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ChatMessages.
+     */
+    distinct?: ChatMessagesScalarFieldEnum | ChatMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * ChatMessages findFirstOrThrow
+   */
+  export type ChatMessagesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatMessages to fetch.
+     */
+    where?: ChatMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatMessages to fetch.
+     */
+    orderBy?: ChatMessagesOrderByWithRelationInput | ChatMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ChatMessages.
+     */
+    cursor?: ChatMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatMessages.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ChatMessages.
+     */
+    distinct?: ChatMessagesScalarFieldEnum | ChatMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * ChatMessages findMany
+   */
+  export type ChatMessagesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * Filter, which ChatMessages to fetch.
+     */
+    where?: ChatMessagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ChatMessages to fetch.
+     */
+    orderBy?: ChatMessagesOrderByWithRelationInput | ChatMessagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ChatMessages.
+     */
+    cursor?: ChatMessagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ChatMessages from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ChatMessages.
+     */
+    skip?: number
+    distinct?: ChatMessagesScalarFieldEnum | ChatMessagesScalarFieldEnum[]
+  }
+
+  /**
+   * ChatMessages create
+   */
+  export type ChatMessagesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ChatMessages.
+     */
+    data?: XOR<ChatMessagesCreateInput, ChatMessagesUncheckedCreateInput>
+  }
+
+  /**
+   * ChatMessages createMany
+   */
+  export type ChatMessagesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ChatMessages.
+     */
+    data: ChatMessagesCreateManyInput | ChatMessagesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ChatMessages update
+   */
+  export type ChatMessagesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ChatMessages.
+     */
+    data: XOR<ChatMessagesUpdateInput, ChatMessagesUncheckedUpdateInput>
+    /**
+     * Choose, which ChatMessages to update.
+     */
+    where: ChatMessagesWhereUniqueInput
+  }
+
+  /**
+   * ChatMessages updateMany
+   */
+  export type ChatMessagesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ChatMessages.
+     */
+    data: XOR<ChatMessagesUpdateManyMutationInput, ChatMessagesUncheckedUpdateManyInput>
+    /**
+     * Filter which ChatMessages to update
+     */
+    where?: ChatMessagesWhereInput
+    /**
+     * Limit how many ChatMessages to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ChatMessages upsert
+   */
+  export type ChatMessagesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ChatMessages to update in case it exists.
+     */
+    where: ChatMessagesWhereUniqueInput
+    /**
+     * In case the ChatMessages found by the `where` argument doesn't exist, create a new ChatMessages with this data.
+     */
+    create: XOR<ChatMessagesCreateInput, ChatMessagesUncheckedCreateInput>
+    /**
+     * In case the ChatMessages was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ChatMessagesUpdateInput, ChatMessagesUncheckedUpdateInput>
+  }
+
+  /**
+   * ChatMessages delete
+   */
+  export type ChatMessagesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+    /**
+     * Filter which ChatMessages to delete.
+     */
+    where: ChatMessagesWhereUniqueInput
+  }
+
+  /**
+   * ChatMessages deleteMany
+   */
+  export type ChatMessagesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ChatMessages to delete
+     */
+    where?: ChatMessagesWhereInput
+    /**
+     * Limit how many ChatMessages to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ChatMessages.ChatGroups
+   */
+  export type ChatMessages$ChatGroupsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatGroups
+     */
+    select?: ChatGroupsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatGroups
+     */
+    omit?: ChatGroupsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatGroupsInclude<ExtArgs> | null
+    where?: ChatGroupsWhereInput
+  }
+
+  /**
+   * ChatMessages.Users
+   */
+  export type ChatMessages$UsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Users
+     */
+    select?: UsersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Users
+     */
+    omit?: UsersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsersInclude<ExtArgs> | null
+    where?: UsersWhereInput
+  }
+
+  /**
+   * ChatMessages without action
+   */
+  export type ChatMessagesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ChatMessages
+     */
+    select?: ChatMessagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ChatMessages
+     */
+    omit?: ChatMessagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ChatMessagesInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -6648,7 +10240,7 @@ export namespace Prisma {
   export const UsersScalarFieldEnum: {
     id: 'id',
     email: 'email',
-    fullname: 'fullname',
+    fullName: 'fullName',
     avatar: 'avatar',
     age: 'age',
     totpSecret: 'totpSecret',
@@ -6676,6 +10268,49 @@ export namespace Prisma {
   };
 
   export type FoodsScalarFieldEnum = (typeof FoodsScalarFieldEnum)[keyof typeof FoodsScalarFieldEnum]
+
+
+  export const ChatGroupMembersScalarFieldEnum: {
+    id: 'id',
+    userId: 'userId',
+    chatGroupId: 'chatGroupId',
+    deletedBy: 'deletedBy',
+    isDeleted: 'isDeleted',
+    deletedAt: 'deletedAt',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ChatGroupMembersScalarFieldEnum = (typeof ChatGroupMembersScalarFieldEnum)[keyof typeof ChatGroupMembersScalarFieldEnum]
+
+
+  export const ChatGroupsScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    ownerId: 'ownerId',
+    deletedBy: 'deletedBy',
+    isDeleted: 'isDeleted',
+    deletedAt: 'deletedAt',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ChatGroupsScalarFieldEnum = (typeof ChatGroupsScalarFieldEnum)[keyof typeof ChatGroupsScalarFieldEnum]
+
+
+  export const ChatMessagesScalarFieldEnum: {
+    id: 'id',
+    chatGroupId: 'chatGroupId',
+    userIdSender: 'userIdSender',
+    messageText: 'messageText',
+    deletedBy: 'deletedBy',
+    isDeleted: 'isDeleted',
+    deletedAt: 'deletedAt',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ChatMessagesScalarFieldEnum = (typeof ChatMessagesScalarFieldEnum)[keyof typeof ChatMessagesScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -6714,7 +10349,7 @@ export namespace Prisma {
 
   export const UsersOrderByRelevanceFieldEnum: {
     email: 'email',
-    fullname: 'fullname',
+    fullName: 'fullName',
     avatar: 'avatar',
     totpSecret: 'totpSecret',
     googleId: 'googleId',
@@ -6730,6 +10365,20 @@ export namespace Prisma {
   };
 
   export type foodsOrderByRelevanceFieldEnum = (typeof foodsOrderByRelevanceFieldEnum)[keyof typeof foodsOrderByRelevanceFieldEnum]
+
+
+  export const ChatGroupsOrderByRelevanceFieldEnum: {
+    name: 'name'
+  };
+
+  export type ChatGroupsOrderByRelevanceFieldEnum = (typeof ChatGroupsOrderByRelevanceFieldEnum)[keyof typeof ChatGroupsOrderByRelevanceFieldEnum]
+
+
+  export const ChatMessagesOrderByRelevanceFieldEnum: {
+    messageText: 'messageText'
+  };
+
+  export type ChatMessagesOrderByRelevanceFieldEnum = (typeof ChatMessagesOrderByRelevanceFieldEnum)[keyof typeof ChatMessagesOrderByRelevanceFieldEnum]
 
 
   /**
@@ -7032,7 +10681,7 @@ export namespace Prisma {
     NOT?: UsersWhereInput | UsersWhereInput[]
     id?: IntFilter<"Users"> | number
     email?: StringFilter<"Users"> | string
-    fullname?: StringNullableFilter<"Users"> | string | null
+    fullName?: StringNullableFilter<"Users"> | string | null
     avatar?: StringNullableFilter<"Users"> | string | null
     age?: IntNullableFilter<"Users"> | number | null
     totpSecret?: StringNullableFilter<"Users"> | string | null
@@ -7045,13 +10694,16 @@ export namespace Prisma {
     password?: StringNullableFilter<"Users"> | string | null
     Articles?: ArticlesListRelationFilter
     Articles_demo?: Articles_demoListRelationFilter
+    ChatGroupMembers?: ChatGroupMembersListRelationFilter
+    ChatGroups?: ChatGroupsListRelationFilter
+    ChatMessages?: ChatMessagesListRelationFilter
     Orders?: OrdersListRelationFilter
   }
 
   export type UsersOrderByWithRelationInput = {
     id?: SortOrder
     email?: SortOrder
-    fullname?: SortOrderInput | SortOrder
+    fullName?: SortOrderInput | SortOrder
     avatar?: SortOrderInput | SortOrder
     age?: SortOrderInput | SortOrder
     totpSecret?: SortOrderInput | SortOrder
@@ -7064,6 +10716,9 @@ export namespace Prisma {
     password?: SortOrderInput | SortOrder
     Articles?: ArticlesOrderByRelationAggregateInput
     Articles_demo?: Articles_demoOrderByRelationAggregateInput
+    ChatGroupMembers?: ChatGroupMembersOrderByRelationAggregateInput
+    ChatGroups?: ChatGroupsOrderByRelationAggregateInput
+    ChatMessages?: ChatMessagesOrderByRelationAggregateInput
     Orders?: OrdersOrderByRelationAggregateInput
     _relevance?: UsersOrderByRelevanceInput
   }
@@ -7074,7 +10729,7 @@ export namespace Prisma {
     AND?: UsersWhereInput | UsersWhereInput[]
     OR?: UsersWhereInput[]
     NOT?: UsersWhereInput | UsersWhereInput[]
-    fullname?: StringNullableFilter<"Users"> | string | null
+    fullName?: StringNullableFilter<"Users"> | string | null
     avatar?: StringNullableFilter<"Users"> | string | null
     age?: IntNullableFilter<"Users"> | number | null
     totpSecret?: StringNullableFilter<"Users"> | string | null
@@ -7087,13 +10742,16 @@ export namespace Prisma {
     password?: StringNullableFilter<"Users"> | string | null
     Articles?: ArticlesListRelationFilter
     Articles_demo?: Articles_demoListRelationFilter
+    ChatGroupMembers?: ChatGroupMembersListRelationFilter
+    ChatGroups?: ChatGroupsListRelationFilter
+    ChatMessages?: ChatMessagesListRelationFilter
     Orders?: OrdersListRelationFilter
   }, "id" | "email">
 
   export type UsersOrderByWithAggregationInput = {
     id?: SortOrder
     email?: SortOrder
-    fullname?: SortOrderInput | SortOrder
+    fullName?: SortOrderInput | SortOrder
     avatar?: SortOrderInput | SortOrder
     age?: SortOrderInput | SortOrder
     totpSecret?: SortOrderInput | SortOrder
@@ -7117,7 +10775,7 @@ export namespace Prisma {
     NOT?: UsersScalarWhereWithAggregatesInput | UsersScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Users"> | number
     email?: StringWithAggregatesFilter<"Users"> | string
-    fullname?: StringNullableWithAggregatesFilter<"Users"> | string | null
+    fullName?: StringNullableWithAggregatesFilter<"Users"> | string | null
     avatar?: StringNullableWithAggregatesFilter<"Users"> | string | null
     age?: IntNullableWithAggregatesFilter<"Users"> | number | null
     totpSecret?: StringNullableWithAggregatesFilter<"Users"> | string | null
@@ -7201,6 +10859,241 @@ export namespace Prisma {
     deletedAt?: DateTimeNullableWithAggregatesFilter<"foods"> | Date | string | null
     createdAt?: DateTimeWithAggregatesFilter<"foods"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"foods"> | Date | string
+  }
+
+  export type ChatGroupMembersWhereInput = {
+    AND?: ChatGroupMembersWhereInput | ChatGroupMembersWhereInput[]
+    OR?: ChatGroupMembersWhereInput[]
+    NOT?: ChatGroupMembersWhereInput | ChatGroupMembersWhereInput[]
+    id?: IntFilter<"ChatGroupMembers"> | number
+    userId?: IntNullableFilter<"ChatGroupMembers"> | number | null
+    chatGroupId?: IntNullableFilter<"ChatGroupMembers"> | number | null
+    deletedBy?: IntFilter<"ChatGroupMembers"> | number
+    isDeleted?: BoolFilter<"ChatGroupMembers"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatGroupMembers"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatGroupMembers"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatGroupMembers"> | Date | string
+    Users?: XOR<UsersNullableScalarRelationFilter, UsersWhereInput> | null
+    ChatGroups?: XOR<ChatGroupsNullableScalarRelationFilter, ChatGroupsWhereInput> | null
+  }
+
+  export type ChatGroupMembersOrderByWithRelationInput = {
+    id?: SortOrder
+    userId?: SortOrderInput | SortOrder
+    chatGroupId?: SortOrderInput | SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    Users?: UsersOrderByWithRelationInput
+    ChatGroups?: ChatGroupsOrderByWithRelationInput
+  }
+
+  export type ChatGroupMembersWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: ChatGroupMembersWhereInput | ChatGroupMembersWhereInput[]
+    OR?: ChatGroupMembersWhereInput[]
+    NOT?: ChatGroupMembersWhereInput | ChatGroupMembersWhereInput[]
+    userId?: IntNullableFilter<"ChatGroupMembers"> | number | null
+    chatGroupId?: IntNullableFilter<"ChatGroupMembers"> | number | null
+    deletedBy?: IntFilter<"ChatGroupMembers"> | number
+    isDeleted?: BoolFilter<"ChatGroupMembers"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatGroupMembers"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatGroupMembers"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatGroupMembers"> | Date | string
+    Users?: XOR<UsersNullableScalarRelationFilter, UsersWhereInput> | null
+    ChatGroups?: XOR<ChatGroupsNullableScalarRelationFilter, ChatGroupsWhereInput> | null
+  }, "id">
+
+  export type ChatGroupMembersOrderByWithAggregationInput = {
+    id?: SortOrder
+    userId?: SortOrderInput | SortOrder
+    chatGroupId?: SortOrderInput | SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ChatGroupMembersCountOrderByAggregateInput
+    _avg?: ChatGroupMembersAvgOrderByAggregateInput
+    _max?: ChatGroupMembersMaxOrderByAggregateInput
+    _min?: ChatGroupMembersMinOrderByAggregateInput
+    _sum?: ChatGroupMembersSumOrderByAggregateInput
+  }
+
+  export type ChatGroupMembersScalarWhereWithAggregatesInput = {
+    AND?: ChatGroupMembersScalarWhereWithAggregatesInput | ChatGroupMembersScalarWhereWithAggregatesInput[]
+    OR?: ChatGroupMembersScalarWhereWithAggregatesInput[]
+    NOT?: ChatGroupMembersScalarWhereWithAggregatesInput | ChatGroupMembersScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"ChatGroupMembers"> | number
+    userId?: IntNullableWithAggregatesFilter<"ChatGroupMembers"> | number | null
+    chatGroupId?: IntNullableWithAggregatesFilter<"ChatGroupMembers"> | number | null
+    deletedBy?: IntWithAggregatesFilter<"ChatGroupMembers"> | number
+    isDeleted?: BoolWithAggregatesFilter<"ChatGroupMembers"> | boolean
+    deletedAt?: DateTimeNullableWithAggregatesFilter<"ChatGroupMembers"> | Date | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"ChatGroupMembers"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ChatGroupMembers"> | Date | string
+  }
+
+  export type ChatGroupsWhereInput = {
+    AND?: ChatGroupsWhereInput | ChatGroupsWhereInput[]
+    OR?: ChatGroupsWhereInput[]
+    NOT?: ChatGroupsWhereInput | ChatGroupsWhereInput[]
+    id?: IntFilter<"ChatGroups"> | number
+    name?: StringNullableFilter<"ChatGroups"> | string | null
+    ownerId?: IntNullableFilter<"ChatGroups"> | number | null
+    deletedBy?: IntFilter<"ChatGroups"> | number
+    isDeleted?: BoolFilter<"ChatGroups"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatGroups"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatGroups"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatGroups"> | Date | string
+    ChatGroupMembers?: ChatGroupMembersListRelationFilter
+    Users?: XOR<UsersNullableScalarRelationFilter, UsersWhereInput> | null
+    ChatMessages?: ChatMessagesListRelationFilter
+  }
+
+  export type ChatGroupsOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    ownerId?: SortOrderInput | SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    ChatGroupMembers?: ChatGroupMembersOrderByRelationAggregateInput
+    Users?: UsersOrderByWithRelationInput
+    ChatMessages?: ChatMessagesOrderByRelationAggregateInput
+    _relevance?: ChatGroupsOrderByRelevanceInput
+  }
+
+  export type ChatGroupsWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: ChatGroupsWhereInput | ChatGroupsWhereInput[]
+    OR?: ChatGroupsWhereInput[]
+    NOT?: ChatGroupsWhereInput | ChatGroupsWhereInput[]
+    name?: StringNullableFilter<"ChatGroups"> | string | null
+    ownerId?: IntNullableFilter<"ChatGroups"> | number | null
+    deletedBy?: IntFilter<"ChatGroups"> | number
+    isDeleted?: BoolFilter<"ChatGroups"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatGroups"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatGroups"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatGroups"> | Date | string
+    ChatGroupMembers?: ChatGroupMembersListRelationFilter
+    Users?: XOR<UsersNullableScalarRelationFilter, UsersWhereInput> | null
+    ChatMessages?: ChatMessagesListRelationFilter
+  }, "id">
+
+  export type ChatGroupsOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    ownerId?: SortOrderInput | SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ChatGroupsCountOrderByAggregateInput
+    _avg?: ChatGroupsAvgOrderByAggregateInput
+    _max?: ChatGroupsMaxOrderByAggregateInput
+    _min?: ChatGroupsMinOrderByAggregateInput
+    _sum?: ChatGroupsSumOrderByAggregateInput
+  }
+
+  export type ChatGroupsScalarWhereWithAggregatesInput = {
+    AND?: ChatGroupsScalarWhereWithAggregatesInput | ChatGroupsScalarWhereWithAggregatesInput[]
+    OR?: ChatGroupsScalarWhereWithAggregatesInput[]
+    NOT?: ChatGroupsScalarWhereWithAggregatesInput | ChatGroupsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"ChatGroups"> | number
+    name?: StringNullableWithAggregatesFilter<"ChatGroups"> | string | null
+    ownerId?: IntNullableWithAggregatesFilter<"ChatGroups"> | number | null
+    deletedBy?: IntWithAggregatesFilter<"ChatGroups"> | number
+    isDeleted?: BoolWithAggregatesFilter<"ChatGroups"> | boolean
+    deletedAt?: DateTimeNullableWithAggregatesFilter<"ChatGroups"> | Date | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"ChatGroups"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ChatGroups"> | Date | string
+  }
+
+  export type ChatMessagesWhereInput = {
+    AND?: ChatMessagesWhereInput | ChatMessagesWhereInput[]
+    OR?: ChatMessagesWhereInput[]
+    NOT?: ChatMessagesWhereInput | ChatMessagesWhereInput[]
+    id?: IntFilter<"ChatMessages"> | number
+    chatGroupId?: IntNullableFilter<"ChatMessages"> | number | null
+    userIdSender?: IntNullableFilter<"ChatMessages"> | number | null
+    messageText?: StringNullableFilter<"ChatMessages"> | string | null
+    deletedBy?: IntFilter<"ChatMessages"> | number
+    isDeleted?: BoolFilter<"ChatMessages"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatMessages"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatMessages"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatMessages"> | Date | string
+    ChatGroups?: XOR<ChatGroupsNullableScalarRelationFilter, ChatGroupsWhereInput> | null
+    Users?: XOR<UsersNullableScalarRelationFilter, UsersWhereInput> | null
+  }
+
+  export type ChatMessagesOrderByWithRelationInput = {
+    id?: SortOrder
+    chatGroupId?: SortOrderInput | SortOrder
+    userIdSender?: SortOrderInput | SortOrder
+    messageText?: SortOrderInput | SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    ChatGroups?: ChatGroupsOrderByWithRelationInput
+    Users?: UsersOrderByWithRelationInput
+    _relevance?: ChatMessagesOrderByRelevanceInput
+  }
+
+  export type ChatMessagesWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: ChatMessagesWhereInput | ChatMessagesWhereInput[]
+    OR?: ChatMessagesWhereInput[]
+    NOT?: ChatMessagesWhereInput | ChatMessagesWhereInput[]
+    chatGroupId?: IntNullableFilter<"ChatMessages"> | number | null
+    userIdSender?: IntNullableFilter<"ChatMessages"> | number | null
+    messageText?: StringNullableFilter<"ChatMessages"> | string | null
+    deletedBy?: IntFilter<"ChatMessages"> | number
+    isDeleted?: BoolFilter<"ChatMessages"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatMessages"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatMessages"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatMessages"> | Date | string
+    ChatGroups?: XOR<ChatGroupsNullableScalarRelationFilter, ChatGroupsWhereInput> | null
+    Users?: XOR<UsersNullableScalarRelationFilter, UsersWhereInput> | null
+  }, "id">
+
+  export type ChatMessagesOrderByWithAggregationInput = {
+    id?: SortOrder
+    chatGroupId?: SortOrderInput | SortOrder
+    userIdSender?: SortOrderInput | SortOrder
+    messageText?: SortOrderInput | SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ChatMessagesCountOrderByAggregateInput
+    _avg?: ChatMessagesAvgOrderByAggregateInput
+    _max?: ChatMessagesMaxOrderByAggregateInput
+    _min?: ChatMessagesMinOrderByAggregateInput
+    _sum?: ChatMessagesSumOrderByAggregateInput
+  }
+
+  export type ChatMessagesScalarWhereWithAggregatesInput = {
+    AND?: ChatMessagesScalarWhereWithAggregatesInput | ChatMessagesScalarWhereWithAggregatesInput[]
+    OR?: ChatMessagesScalarWhereWithAggregatesInput[]
+    NOT?: ChatMessagesScalarWhereWithAggregatesInput | ChatMessagesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"ChatMessages"> | number
+    chatGroupId?: IntNullableWithAggregatesFilter<"ChatMessages"> | number | null
+    userIdSender?: IntNullableWithAggregatesFilter<"ChatMessages"> | number | null
+    messageText?: StringNullableWithAggregatesFilter<"ChatMessages"> | string | null
+    deletedBy?: IntWithAggregatesFilter<"ChatMessages"> | number
+    isDeleted?: BoolWithAggregatesFilter<"ChatMessages"> | boolean
+    deletedAt?: DateTimeNullableWithAggregatesFilter<"ChatMessages"> | Date | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"ChatMessages"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ChatMessages"> | Date | string
   }
 
   export type ArticlesCreateInput = {
@@ -7465,7 +11358,7 @@ export namespace Prisma {
 
   export type UsersCreateInput = {
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -7478,13 +11371,16 @@ export namespace Prisma {
     password?: string | null
     Articles?: ArticlesCreateNestedManyWithoutUsersInput
     Articles_demo?: Articles_demoCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutUsersInput
     Orders?: OrdersCreateNestedManyWithoutUsersInput
   }
 
   export type UsersUncheckedCreateInput = {
     id?: number
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -7497,12 +11393,15 @@ export namespace Prisma {
     password?: string | null
     Articles?: ArticlesUncheckedCreateNestedManyWithoutUsersInput
     Articles_demo?: Articles_demoUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsUncheckedCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutUsersInput
     Orders?: OrdersUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type UsersUpdateInput = {
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7515,13 +11414,16 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles?: ArticlesUpdateManyWithoutUsersNestedInput
     Articles_demo?: Articles_demoUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutUsersNestedInput
     Orders?: OrdersUpdateManyWithoutUsersNestedInput
   }
 
   export type UsersUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7534,13 +11436,16 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles?: ArticlesUncheckedUpdateManyWithoutUsersNestedInput
     Articles_demo?: Articles_demoUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUncheckedUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutUsersNestedInput
     Orders?: OrdersUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type UsersCreateManyInput = {
     id?: number
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -7555,7 +11460,7 @@ export namespace Prisma {
 
   export type UsersUpdateManyMutationInput = {
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7571,7 +11476,7 @@ export namespace Prisma {
   export type UsersUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -7655,6 +11560,238 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     name?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupMembersCreateInput = {
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    Users?: UsersCreateNestedOneWithoutChatGroupMembersInput
+    ChatGroups?: ChatGroupsCreateNestedOneWithoutChatGroupMembersInput
+  }
+
+  export type ChatGroupMembersUncheckedCreateInput = {
+    id?: number
+    userId?: number | null
+    chatGroupId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupMembersUpdateInput = {
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    Users?: UsersUpdateOneWithoutChatGroupMembersNestedInput
+    ChatGroups?: ChatGroupsUpdateOneWithoutChatGroupMembersNestedInput
+  }
+
+  export type ChatGroupMembersUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: NullableIntFieldUpdateOperationsInput | number | null
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupMembersCreateManyInput = {
+    id?: number
+    userId?: number | null
+    chatGroupId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupMembersUpdateManyMutationInput = {
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupMembersUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: NullableIntFieldUpdateOperationsInput | number | null
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupsCreateInput = {
+    name?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutChatGroupsInput
+    Users?: UsersCreateNestedOneWithoutChatGroupsInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsUncheckedCreateInput = {
+    id?: number
+    name?: string | null
+    ownerId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutChatGroupsInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsUpdateInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutChatGroupsNestedInput
+    Users?: UsersUpdateOneWithoutChatGroupsNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutChatGroupsNestedInput
+  }
+
+  export type ChatGroupsUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    ownerId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutChatGroupsNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutChatGroupsNestedInput
+  }
+
+  export type ChatGroupsCreateManyInput = {
+    id?: number
+    name?: string | null
+    ownerId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupsUpdateManyMutationInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupsUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    ownerId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatMessagesCreateInput = {
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroups?: ChatGroupsCreateNestedOneWithoutChatMessagesInput
+    Users?: UsersCreateNestedOneWithoutChatMessagesInput
+  }
+
+  export type ChatMessagesUncheckedCreateInput = {
+    id?: number
+    chatGroupId?: number | null
+    userIdSender?: number | null
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatMessagesUpdateInput = {
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroups?: ChatGroupsUpdateOneWithoutChatMessagesNestedInput
+    Users?: UsersUpdateOneWithoutChatMessagesNestedInput
+  }
+
+  export type ChatMessagesUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    userIdSender?: NullableIntFieldUpdateOperationsInput | number | null
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatMessagesCreateManyInput = {
+    id?: number
+    chatGroupId?: number | null
+    userIdSender?: number | null
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatMessagesUpdateManyMutationInput = {
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatMessagesUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    userIdSender?: NullableIntFieldUpdateOperationsInput | number | null
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
     deletedBy?: IntFieldUpdateOperationsInput | number
     isDeleted?: BoolFieldUpdateOperationsInput | boolean
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -8043,6 +12180,24 @@ export namespace Prisma {
     none?: Articles_demoWhereInput
   }
 
+  export type ChatGroupMembersListRelationFilter = {
+    every?: ChatGroupMembersWhereInput
+    some?: ChatGroupMembersWhereInput
+    none?: ChatGroupMembersWhereInput
+  }
+
+  export type ChatGroupsListRelationFilter = {
+    every?: ChatGroupsWhereInput
+    some?: ChatGroupsWhereInput
+    none?: ChatGroupsWhereInput
+  }
+
+  export type ChatMessagesListRelationFilter = {
+    every?: ChatMessagesWhereInput
+    some?: ChatMessagesWhereInput
+    none?: ChatMessagesWhereInput
+  }
+
   export type OrdersListRelationFilter = {
     every?: OrdersWhereInput
     some?: OrdersWhereInput
@@ -8054,6 +12209,18 @@ export namespace Prisma {
   }
 
   export type Articles_demoOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ChatGroupMembersOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ChatGroupsOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ChatMessagesOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -8070,7 +12237,7 @@ export namespace Prisma {
   export type UsersCountOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
-    fullname?: SortOrder
+    fullName?: SortOrder
     avatar?: SortOrder
     age?: SortOrder
     totpSecret?: SortOrder
@@ -8092,7 +12259,7 @@ export namespace Prisma {
   export type UsersMaxOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
-    fullname?: SortOrder
+    fullName?: SortOrder
     avatar?: SortOrder
     age?: SortOrder
     totpSecret?: SortOrder
@@ -8108,7 +12275,7 @@ export namespace Prisma {
   export type UsersMinOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
-    fullname?: SortOrder
+    fullName?: SortOrder
     avatar?: SortOrder
     age?: SortOrder
     totpSecret?: SortOrder
@@ -8191,6 +12358,165 @@ export namespace Prisma {
 
   export type foodsSumOrderByAggregateInput = {
     id?: SortOrder
+    deletedBy?: SortOrder
+  }
+
+  export type ChatGroupsNullableScalarRelationFilter = {
+    is?: ChatGroupsWhereInput | null
+    isNot?: ChatGroupsWhereInput | null
+  }
+
+  export type ChatGroupMembersCountOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    chatGroupId?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatGroupMembersAvgOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    chatGroupId?: SortOrder
+    deletedBy?: SortOrder
+  }
+
+  export type ChatGroupMembersMaxOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    chatGroupId?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatGroupMembersMinOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    chatGroupId?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatGroupMembersSumOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
+    chatGroupId?: SortOrder
+    deletedBy?: SortOrder
+  }
+
+  export type ChatGroupsOrderByRelevanceInput = {
+    fields: ChatGroupsOrderByRelevanceFieldEnum | ChatGroupsOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type ChatGroupsCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatGroupsAvgOrderByAggregateInput = {
+    id?: SortOrder
+    ownerId?: SortOrder
+    deletedBy?: SortOrder
+  }
+
+  export type ChatGroupsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatGroupsMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    ownerId?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatGroupsSumOrderByAggregateInput = {
+    id?: SortOrder
+    ownerId?: SortOrder
+    deletedBy?: SortOrder
+  }
+
+  export type ChatMessagesOrderByRelevanceInput = {
+    fields: ChatMessagesOrderByRelevanceFieldEnum | ChatMessagesOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type ChatMessagesCountOrderByAggregateInput = {
+    id?: SortOrder
+    chatGroupId?: SortOrder
+    userIdSender?: SortOrder
+    messageText?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatMessagesAvgOrderByAggregateInput = {
+    id?: SortOrder
+    chatGroupId?: SortOrder
+    userIdSender?: SortOrder
+    deletedBy?: SortOrder
+  }
+
+  export type ChatMessagesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    chatGroupId?: SortOrder
+    userIdSender?: SortOrder
+    messageText?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatMessagesMinOrderByAggregateInput = {
+    id?: SortOrder
+    chatGroupId?: SortOrder
+    userIdSender?: SortOrder
+    messageText?: SortOrder
+    deletedBy?: SortOrder
+    isDeleted?: SortOrder
+    deletedAt?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ChatMessagesSumOrderByAggregateInput = {
+    id?: SortOrder
+    chatGroupId?: SortOrder
+    userIdSender?: SortOrder
     deletedBy?: SortOrder
   }
 
@@ -8306,6 +12632,27 @@ export namespace Prisma {
     connect?: Articles_demoWhereUniqueInput | Articles_demoWhereUniqueInput[]
   }
 
+  export type ChatGroupMembersCreateNestedManyWithoutUsersInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutUsersInput, ChatGroupMembersUncheckedCreateWithoutUsersInput> | ChatGroupMembersCreateWithoutUsersInput[] | ChatGroupMembersUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutUsersInput | ChatGroupMembersCreateOrConnectWithoutUsersInput[]
+    createMany?: ChatGroupMembersCreateManyUsersInputEnvelope
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+  }
+
+  export type ChatGroupsCreateNestedManyWithoutUsersInput = {
+    create?: XOR<ChatGroupsCreateWithoutUsersInput, ChatGroupsUncheckedCreateWithoutUsersInput> | ChatGroupsCreateWithoutUsersInput[] | ChatGroupsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutUsersInput | ChatGroupsCreateOrConnectWithoutUsersInput[]
+    createMany?: ChatGroupsCreateManyUsersInputEnvelope
+    connect?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+  }
+
+  export type ChatMessagesCreateNestedManyWithoutUsersInput = {
+    create?: XOR<ChatMessagesCreateWithoutUsersInput, ChatMessagesUncheckedCreateWithoutUsersInput> | ChatMessagesCreateWithoutUsersInput[] | ChatMessagesUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutUsersInput | ChatMessagesCreateOrConnectWithoutUsersInput[]
+    createMany?: ChatMessagesCreateManyUsersInputEnvelope
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+  }
+
   export type OrdersCreateNestedManyWithoutUsersInput = {
     create?: XOR<OrdersCreateWithoutUsersInput, OrdersUncheckedCreateWithoutUsersInput> | OrdersCreateWithoutUsersInput[] | OrdersUncheckedCreateWithoutUsersInput[]
     connectOrCreate?: OrdersCreateOrConnectWithoutUsersInput | OrdersCreateOrConnectWithoutUsersInput[]
@@ -8325,6 +12672,27 @@ export namespace Prisma {
     connectOrCreate?: Articles_demoCreateOrConnectWithoutUsersInput | Articles_demoCreateOrConnectWithoutUsersInput[]
     createMany?: Articles_demoCreateManyUsersInputEnvelope
     connect?: Articles_demoWhereUniqueInput | Articles_demoWhereUniqueInput[]
+  }
+
+  export type ChatGroupMembersUncheckedCreateNestedManyWithoutUsersInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutUsersInput, ChatGroupMembersUncheckedCreateWithoutUsersInput> | ChatGroupMembersCreateWithoutUsersInput[] | ChatGroupMembersUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutUsersInput | ChatGroupMembersCreateOrConnectWithoutUsersInput[]
+    createMany?: ChatGroupMembersCreateManyUsersInputEnvelope
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+  }
+
+  export type ChatGroupsUncheckedCreateNestedManyWithoutUsersInput = {
+    create?: XOR<ChatGroupsCreateWithoutUsersInput, ChatGroupsUncheckedCreateWithoutUsersInput> | ChatGroupsCreateWithoutUsersInput[] | ChatGroupsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutUsersInput | ChatGroupsCreateOrConnectWithoutUsersInput[]
+    createMany?: ChatGroupsCreateManyUsersInputEnvelope
+    connect?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+  }
+
+  export type ChatMessagesUncheckedCreateNestedManyWithoutUsersInput = {
+    create?: XOR<ChatMessagesCreateWithoutUsersInput, ChatMessagesUncheckedCreateWithoutUsersInput> | ChatMessagesCreateWithoutUsersInput[] | ChatMessagesUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutUsersInput | ChatMessagesCreateOrConnectWithoutUsersInput[]
+    createMany?: ChatMessagesCreateManyUsersInputEnvelope
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
   }
 
   export type OrdersUncheckedCreateNestedManyWithoutUsersInput = {
@@ -8364,6 +12732,48 @@ export namespace Prisma {
     update?: Articles_demoUpdateWithWhereUniqueWithoutUsersInput | Articles_demoUpdateWithWhereUniqueWithoutUsersInput[]
     updateMany?: Articles_demoUpdateManyWithWhereWithoutUsersInput | Articles_demoUpdateManyWithWhereWithoutUsersInput[]
     deleteMany?: Articles_demoScalarWhereInput | Articles_demoScalarWhereInput[]
+  }
+
+  export type ChatGroupMembersUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutUsersInput, ChatGroupMembersUncheckedCreateWithoutUsersInput> | ChatGroupMembersCreateWithoutUsersInput[] | ChatGroupMembersUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutUsersInput | ChatGroupMembersCreateOrConnectWithoutUsersInput[]
+    upsert?: ChatGroupMembersUpsertWithWhereUniqueWithoutUsersInput | ChatGroupMembersUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: ChatGroupMembersCreateManyUsersInputEnvelope
+    set?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    disconnect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    delete?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    update?: ChatGroupMembersUpdateWithWhereUniqueWithoutUsersInput | ChatGroupMembersUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: ChatGroupMembersUpdateManyWithWhereWithoutUsersInput | ChatGroupMembersUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: ChatGroupMembersScalarWhereInput | ChatGroupMembersScalarWhereInput[]
+  }
+
+  export type ChatGroupsUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<ChatGroupsCreateWithoutUsersInput, ChatGroupsUncheckedCreateWithoutUsersInput> | ChatGroupsCreateWithoutUsersInput[] | ChatGroupsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutUsersInput | ChatGroupsCreateOrConnectWithoutUsersInput[]
+    upsert?: ChatGroupsUpsertWithWhereUniqueWithoutUsersInput | ChatGroupsUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: ChatGroupsCreateManyUsersInputEnvelope
+    set?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    disconnect?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    delete?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    connect?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    update?: ChatGroupsUpdateWithWhereUniqueWithoutUsersInput | ChatGroupsUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: ChatGroupsUpdateManyWithWhereWithoutUsersInput | ChatGroupsUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: ChatGroupsScalarWhereInput | ChatGroupsScalarWhereInput[]
+  }
+
+  export type ChatMessagesUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<ChatMessagesCreateWithoutUsersInput, ChatMessagesUncheckedCreateWithoutUsersInput> | ChatMessagesCreateWithoutUsersInput[] | ChatMessagesUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutUsersInput | ChatMessagesCreateOrConnectWithoutUsersInput[]
+    upsert?: ChatMessagesUpsertWithWhereUniqueWithoutUsersInput | ChatMessagesUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: ChatMessagesCreateManyUsersInputEnvelope
+    set?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    disconnect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    delete?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    update?: ChatMessagesUpdateWithWhereUniqueWithoutUsersInput | ChatMessagesUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: ChatMessagesUpdateManyWithWhereWithoutUsersInput | ChatMessagesUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
   }
 
   export type OrdersUpdateManyWithoutUsersNestedInput = {
@@ -8406,6 +12816,48 @@ export namespace Prisma {
     update?: Articles_demoUpdateWithWhereUniqueWithoutUsersInput | Articles_demoUpdateWithWhereUniqueWithoutUsersInput[]
     updateMany?: Articles_demoUpdateManyWithWhereWithoutUsersInput | Articles_demoUpdateManyWithWhereWithoutUsersInput[]
     deleteMany?: Articles_demoScalarWhereInput | Articles_demoScalarWhereInput[]
+  }
+
+  export type ChatGroupMembersUncheckedUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutUsersInput, ChatGroupMembersUncheckedCreateWithoutUsersInput> | ChatGroupMembersCreateWithoutUsersInput[] | ChatGroupMembersUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutUsersInput | ChatGroupMembersCreateOrConnectWithoutUsersInput[]
+    upsert?: ChatGroupMembersUpsertWithWhereUniqueWithoutUsersInput | ChatGroupMembersUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: ChatGroupMembersCreateManyUsersInputEnvelope
+    set?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    disconnect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    delete?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    update?: ChatGroupMembersUpdateWithWhereUniqueWithoutUsersInput | ChatGroupMembersUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: ChatGroupMembersUpdateManyWithWhereWithoutUsersInput | ChatGroupMembersUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: ChatGroupMembersScalarWhereInput | ChatGroupMembersScalarWhereInput[]
+  }
+
+  export type ChatGroupsUncheckedUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<ChatGroupsCreateWithoutUsersInput, ChatGroupsUncheckedCreateWithoutUsersInput> | ChatGroupsCreateWithoutUsersInput[] | ChatGroupsUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutUsersInput | ChatGroupsCreateOrConnectWithoutUsersInput[]
+    upsert?: ChatGroupsUpsertWithWhereUniqueWithoutUsersInput | ChatGroupsUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: ChatGroupsCreateManyUsersInputEnvelope
+    set?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    disconnect?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    delete?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    connect?: ChatGroupsWhereUniqueInput | ChatGroupsWhereUniqueInput[]
+    update?: ChatGroupsUpdateWithWhereUniqueWithoutUsersInput | ChatGroupsUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: ChatGroupsUpdateManyWithWhereWithoutUsersInput | ChatGroupsUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: ChatGroupsScalarWhereInput | ChatGroupsScalarWhereInput[]
+  }
+
+  export type ChatMessagesUncheckedUpdateManyWithoutUsersNestedInput = {
+    create?: XOR<ChatMessagesCreateWithoutUsersInput, ChatMessagesUncheckedCreateWithoutUsersInput> | ChatMessagesCreateWithoutUsersInput[] | ChatMessagesUncheckedCreateWithoutUsersInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutUsersInput | ChatMessagesCreateOrConnectWithoutUsersInput[]
+    upsert?: ChatMessagesUpsertWithWhereUniqueWithoutUsersInput | ChatMessagesUpsertWithWhereUniqueWithoutUsersInput[]
+    createMany?: ChatMessagesCreateManyUsersInputEnvelope
+    set?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    disconnect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    delete?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    update?: ChatMessagesUpdateWithWhereUniqueWithoutUsersInput | ChatMessagesUpdateWithWhereUniqueWithoutUsersInput[]
+    updateMany?: ChatMessagesUpdateManyWithWhereWithoutUsersInput | ChatMessagesUpdateManyWithWhereWithoutUsersInput[]
+    deleteMany?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
   }
 
   export type OrdersUncheckedUpdateManyWithoutUsersNestedInput = {
@@ -8462,6 +12914,170 @@ export namespace Prisma {
     update?: OrdersUpdateWithWhereUniqueWithoutFoodsInput | OrdersUpdateWithWhereUniqueWithoutFoodsInput[]
     updateMany?: OrdersUpdateManyWithWhereWithoutFoodsInput | OrdersUpdateManyWithWhereWithoutFoodsInput[]
     deleteMany?: OrdersScalarWhereInput | OrdersScalarWhereInput[]
+  }
+
+  export type UsersCreateNestedOneWithoutChatGroupMembersInput = {
+    create?: XOR<UsersCreateWithoutChatGroupMembersInput, UsersUncheckedCreateWithoutChatGroupMembersInput>
+    connectOrCreate?: UsersCreateOrConnectWithoutChatGroupMembersInput
+    connect?: UsersWhereUniqueInput
+  }
+
+  export type ChatGroupsCreateNestedOneWithoutChatGroupMembersInput = {
+    create?: XOR<ChatGroupsCreateWithoutChatGroupMembersInput, ChatGroupsUncheckedCreateWithoutChatGroupMembersInput>
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutChatGroupMembersInput
+    connect?: ChatGroupsWhereUniqueInput
+  }
+
+  export type UsersUpdateOneWithoutChatGroupMembersNestedInput = {
+    create?: XOR<UsersCreateWithoutChatGroupMembersInput, UsersUncheckedCreateWithoutChatGroupMembersInput>
+    connectOrCreate?: UsersCreateOrConnectWithoutChatGroupMembersInput
+    upsert?: UsersUpsertWithoutChatGroupMembersInput
+    disconnect?: UsersWhereInput | boolean
+    delete?: UsersWhereInput | boolean
+    connect?: UsersWhereUniqueInput
+    update?: XOR<XOR<UsersUpdateToOneWithWhereWithoutChatGroupMembersInput, UsersUpdateWithoutChatGroupMembersInput>, UsersUncheckedUpdateWithoutChatGroupMembersInput>
+  }
+
+  export type ChatGroupsUpdateOneWithoutChatGroupMembersNestedInput = {
+    create?: XOR<ChatGroupsCreateWithoutChatGroupMembersInput, ChatGroupsUncheckedCreateWithoutChatGroupMembersInput>
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutChatGroupMembersInput
+    upsert?: ChatGroupsUpsertWithoutChatGroupMembersInput
+    disconnect?: ChatGroupsWhereInput | boolean
+    delete?: ChatGroupsWhereInput | boolean
+    connect?: ChatGroupsWhereUniqueInput
+    update?: XOR<XOR<ChatGroupsUpdateToOneWithWhereWithoutChatGroupMembersInput, ChatGroupsUpdateWithoutChatGroupMembersInput>, ChatGroupsUncheckedUpdateWithoutChatGroupMembersInput>
+  }
+
+  export type ChatGroupMembersCreateNestedManyWithoutChatGroupsInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutChatGroupsInput, ChatGroupMembersUncheckedCreateWithoutChatGroupsInput> | ChatGroupMembersCreateWithoutChatGroupsInput[] | ChatGroupMembersUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutChatGroupsInput | ChatGroupMembersCreateOrConnectWithoutChatGroupsInput[]
+    createMany?: ChatGroupMembersCreateManyChatGroupsInputEnvelope
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+  }
+
+  export type UsersCreateNestedOneWithoutChatGroupsInput = {
+    create?: XOR<UsersCreateWithoutChatGroupsInput, UsersUncheckedCreateWithoutChatGroupsInput>
+    connectOrCreate?: UsersCreateOrConnectWithoutChatGroupsInput
+    connect?: UsersWhereUniqueInput
+  }
+
+  export type ChatMessagesCreateNestedManyWithoutChatGroupsInput = {
+    create?: XOR<ChatMessagesCreateWithoutChatGroupsInput, ChatMessagesUncheckedCreateWithoutChatGroupsInput> | ChatMessagesCreateWithoutChatGroupsInput[] | ChatMessagesUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutChatGroupsInput | ChatMessagesCreateOrConnectWithoutChatGroupsInput[]
+    createMany?: ChatMessagesCreateManyChatGroupsInputEnvelope
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+  }
+
+  export type ChatGroupMembersUncheckedCreateNestedManyWithoutChatGroupsInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutChatGroupsInput, ChatGroupMembersUncheckedCreateWithoutChatGroupsInput> | ChatGroupMembersCreateWithoutChatGroupsInput[] | ChatGroupMembersUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutChatGroupsInput | ChatGroupMembersCreateOrConnectWithoutChatGroupsInput[]
+    createMany?: ChatGroupMembersCreateManyChatGroupsInputEnvelope
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+  }
+
+  export type ChatMessagesUncheckedCreateNestedManyWithoutChatGroupsInput = {
+    create?: XOR<ChatMessagesCreateWithoutChatGroupsInput, ChatMessagesUncheckedCreateWithoutChatGroupsInput> | ChatMessagesCreateWithoutChatGroupsInput[] | ChatMessagesUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutChatGroupsInput | ChatMessagesCreateOrConnectWithoutChatGroupsInput[]
+    createMany?: ChatMessagesCreateManyChatGroupsInputEnvelope
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+  }
+
+  export type ChatGroupMembersUpdateManyWithoutChatGroupsNestedInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutChatGroupsInput, ChatGroupMembersUncheckedCreateWithoutChatGroupsInput> | ChatGroupMembersCreateWithoutChatGroupsInput[] | ChatGroupMembersUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutChatGroupsInput | ChatGroupMembersCreateOrConnectWithoutChatGroupsInput[]
+    upsert?: ChatGroupMembersUpsertWithWhereUniqueWithoutChatGroupsInput | ChatGroupMembersUpsertWithWhereUniqueWithoutChatGroupsInput[]
+    createMany?: ChatGroupMembersCreateManyChatGroupsInputEnvelope
+    set?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    disconnect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    delete?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    update?: ChatGroupMembersUpdateWithWhereUniqueWithoutChatGroupsInput | ChatGroupMembersUpdateWithWhereUniqueWithoutChatGroupsInput[]
+    updateMany?: ChatGroupMembersUpdateManyWithWhereWithoutChatGroupsInput | ChatGroupMembersUpdateManyWithWhereWithoutChatGroupsInput[]
+    deleteMany?: ChatGroupMembersScalarWhereInput | ChatGroupMembersScalarWhereInput[]
+  }
+
+  export type UsersUpdateOneWithoutChatGroupsNestedInput = {
+    create?: XOR<UsersCreateWithoutChatGroupsInput, UsersUncheckedCreateWithoutChatGroupsInput>
+    connectOrCreate?: UsersCreateOrConnectWithoutChatGroupsInput
+    upsert?: UsersUpsertWithoutChatGroupsInput
+    disconnect?: UsersWhereInput | boolean
+    delete?: UsersWhereInput | boolean
+    connect?: UsersWhereUniqueInput
+    update?: XOR<XOR<UsersUpdateToOneWithWhereWithoutChatGroupsInput, UsersUpdateWithoutChatGroupsInput>, UsersUncheckedUpdateWithoutChatGroupsInput>
+  }
+
+  export type ChatMessagesUpdateManyWithoutChatGroupsNestedInput = {
+    create?: XOR<ChatMessagesCreateWithoutChatGroupsInput, ChatMessagesUncheckedCreateWithoutChatGroupsInput> | ChatMessagesCreateWithoutChatGroupsInput[] | ChatMessagesUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutChatGroupsInput | ChatMessagesCreateOrConnectWithoutChatGroupsInput[]
+    upsert?: ChatMessagesUpsertWithWhereUniqueWithoutChatGroupsInput | ChatMessagesUpsertWithWhereUniqueWithoutChatGroupsInput[]
+    createMany?: ChatMessagesCreateManyChatGroupsInputEnvelope
+    set?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    disconnect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    delete?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    update?: ChatMessagesUpdateWithWhereUniqueWithoutChatGroupsInput | ChatMessagesUpdateWithWhereUniqueWithoutChatGroupsInput[]
+    updateMany?: ChatMessagesUpdateManyWithWhereWithoutChatGroupsInput | ChatMessagesUpdateManyWithWhereWithoutChatGroupsInput[]
+    deleteMany?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
+  }
+
+  export type ChatGroupMembersUncheckedUpdateManyWithoutChatGroupsNestedInput = {
+    create?: XOR<ChatGroupMembersCreateWithoutChatGroupsInput, ChatGroupMembersUncheckedCreateWithoutChatGroupsInput> | ChatGroupMembersCreateWithoutChatGroupsInput[] | ChatGroupMembersUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatGroupMembersCreateOrConnectWithoutChatGroupsInput | ChatGroupMembersCreateOrConnectWithoutChatGroupsInput[]
+    upsert?: ChatGroupMembersUpsertWithWhereUniqueWithoutChatGroupsInput | ChatGroupMembersUpsertWithWhereUniqueWithoutChatGroupsInput[]
+    createMany?: ChatGroupMembersCreateManyChatGroupsInputEnvelope
+    set?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    disconnect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    delete?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    connect?: ChatGroupMembersWhereUniqueInput | ChatGroupMembersWhereUniqueInput[]
+    update?: ChatGroupMembersUpdateWithWhereUniqueWithoutChatGroupsInput | ChatGroupMembersUpdateWithWhereUniqueWithoutChatGroupsInput[]
+    updateMany?: ChatGroupMembersUpdateManyWithWhereWithoutChatGroupsInput | ChatGroupMembersUpdateManyWithWhereWithoutChatGroupsInput[]
+    deleteMany?: ChatGroupMembersScalarWhereInput | ChatGroupMembersScalarWhereInput[]
+  }
+
+  export type ChatMessagesUncheckedUpdateManyWithoutChatGroupsNestedInput = {
+    create?: XOR<ChatMessagesCreateWithoutChatGroupsInput, ChatMessagesUncheckedCreateWithoutChatGroupsInput> | ChatMessagesCreateWithoutChatGroupsInput[] | ChatMessagesUncheckedCreateWithoutChatGroupsInput[]
+    connectOrCreate?: ChatMessagesCreateOrConnectWithoutChatGroupsInput | ChatMessagesCreateOrConnectWithoutChatGroupsInput[]
+    upsert?: ChatMessagesUpsertWithWhereUniqueWithoutChatGroupsInput | ChatMessagesUpsertWithWhereUniqueWithoutChatGroupsInput[]
+    createMany?: ChatMessagesCreateManyChatGroupsInputEnvelope
+    set?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    disconnect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    delete?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    connect?: ChatMessagesWhereUniqueInput | ChatMessagesWhereUniqueInput[]
+    update?: ChatMessagesUpdateWithWhereUniqueWithoutChatGroupsInput | ChatMessagesUpdateWithWhereUniqueWithoutChatGroupsInput[]
+    updateMany?: ChatMessagesUpdateManyWithWhereWithoutChatGroupsInput | ChatMessagesUpdateManyWithWhereWithoutChatGroupsInput[]
+    deleteMany?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
+  }
+
+  export type ChatGroupsCreateNestedOneWithoutChatMessagesInput = {
+    create?: XOR<ChatGroupsCreateWithoutChatMessagesInput, ChatGroupsUncheckedCreateWithoutChatMessagesInput>
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutChatMessagesInput
+    connect?: ChatGroupsWhereUniqueInput
+  }
+
+  export type UsersCreateNestedOneWithoutChatMessagesInput = {
+    create?: XOR<UsersCreateWithoutChatMessagesInput, UsersUncheckedCreateWithoutChatMessagesInput>
+    connectOrCreate?: UsersCreateOrConnectWithoutChatMessagesInput
+    connect?: UsersWhereUniqueInput
+  }
+
+  export type ChatGroupsUpdateOneWithoutChatMessagesNestedInput = {
+    create?: XOR<ChatGroupsCreateWithoutChatMessagesInput, ChatGroupsUncheckedCreateWithoutChatMessagesInput>
+    connectOrCreate?: ChatGroupsCreateOrConnectWithoutChatMessagesInput
+    upsert?: ChatGroupsUpsertWithoutChatMessagesInput
+    disconnect?: ChatGroupsWhereInput | boolean
+    delete?: ChatGroupsWhereInput | boolean
+    connect?: ChatGroupsWhereUniqueInput
+    update?: XOR<XOR<ChatGroupsUpdateToOneWithWhereWithoutChatMessagesInput, ChatGroupsUpdateWithoutChatMessagesInput>, ChatGroupsUncheckedUpdateWithoutChatMessagesInput>
+  }
+
+  export type UsersUpdateOneWithoutChatMessagesNestedInput = {
+    create?: XOR<UsersCreateWithoutChatMessagesInput, UsersUncheckedCreateWithoutChatMessagesInput>
+    connectOrCreate?: UsersCreateOrConnectWithoutChatMessagesInput
+    upsert?: UsersUpsertWithoutChatMessagesInput
+    disconnect?: UsersWhereInput | boolean
+    delete?: UsersWhereInput | boolean
+    connect?: UsersWhereUniqueInput
+    update?: XOR<XOR<UsersUpdateToOneWithWhereWithoutChatMessagesInput, UsersUpdateWithoutChatMessagesInput>, UsersUncheckedUpdateWithoutChatMessagesInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -8684,7 +13300,7 @@ export namespace Prisma {
 
   export type UsersCreateWithoutArticlesInput = {
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -8696,13 +13312,16 @@ export namespace Prisma {
     updatedAt?: Date | string
     password?: string | null
     Articles_demo?: Articles_demoCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutUsersInput
     Orders?: OrdersCreateNestedManyWithoutUsersInput
   }
 
   export type UsersUncheckedCreateWithoutArticlesInput = {
     id?: number
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -8714,6 +13333,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     password?: string | null
     Articles_demo?: Articles_demoUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsUncheckedCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutUsersInput
     Orders?: OrdersUncheckedCreateNestedManyWithoutUsersInput
   }
 
@@ -8735,7 +13357,7 @@ export namespace Prisma {
 
   export type UsersUpdateWithoutArticlesInput = {
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8747,13 +13369,16 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles_demo?: Articles_demoUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutUsersNestedInput
     Orders?: OrdersUpdateManyWithoutUsersNestedInput
   }
 
   export type UsersUncheckedUpdateWithoutArticlesInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8765,12 +13390,15 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles_demo?: Articles_demoUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUncheckedUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutUsersNestedInput
     Orders?: OrdersUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type UsersCreateWithoutArticles_demoInput = {
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -8782,13 +13410,16 @@ export namespace Prisma {
     updatedAt?: Date | string
     password?: string | null
     Articles?: ArticlesCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutUsersInput
     Orders?: OrdersCreateNestedManyWithoutUsersInput
   }
 
   export type UsersUncheckedCreateWithoutArticles_demoInput = {
     id?: number
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -8800,6 +13431,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     password?: string | null
     Articles?: ArticlesUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsUncheckedCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutUsersInput
     Orders?: OrdersUncheckedCreateNestedManyWithoutUsersInput
   }
 
@@ -8821,7 +13455,7 @@ export namespace Prisma {
 
   export type UsersUpdateWithoutArticles_demoInput = {
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8833,13 +13467,16 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles?: ArticlesUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutUsersNestedInput
     Orders?: OrdersUpdateManyWithoutUsersNestedInput
   }
 
   export type UsersUncheckedUpdateWithoutArticles_demoInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8851,12 +13488,15 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles?: ArticlesUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUncheckedUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutUsersNestedInput
     Orders?: OrdersUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type UsersCreateWithoutOrdersInput = {
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -8869,12 +13509,15 @@ export namespace Prisma {
     password?: string | null
     Articles?: ArticlesCreateNestedManyWithoutUsersInput
     Articles_demo?: Articles_demoCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutUsersInput
   }
 
   export type UsersUncheckedCreateWithoutOrdersInput = {
     id?: number
     email: string
-    fullname?: string | null
+    fullName?: string | null
     avatar?: string | null
     age?: number | null
     totpSecret?: string | null
@@ -8887,6 +13530,9 @@ export namespace Prisma {
     password?: string | null
     Articles?: ArticlesUncheckedCreateNestedManyWithoutUsersInput
     Articles_demo?: Articles_demoUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsUncheckedCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutUsersInput
   }
 
   export type UsersCreateOrConnectWithoutOrdersInput = {
@@ -8933,7 +13579,7 @@ export namespace Prisma {
 
   export type UsersUpdateWithoutOrdersInput = {
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8946,12 +13592,15 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles?: ArticlesUpdateManyWithoutUsersNestedInput
     Articles_demo?: Articles_demoUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutUsersNestedInput
   }
 
   export type UsersUncheckedUpdateWithoutOrdersInput = {
     id?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
-    fullname?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
     avatar?: NullableStringFieldUpdateOperationsInput | string | null
     age?: NullableIntFieldUpdateOperationsInput | number | null
     totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
@@ -8964,6 +13613,9 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     Articles?: ArticlesUncheckedUpdateManyWithoutUsersNestedInput
     Articles_demo?: Articles_demoUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUncheckedUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutUsersNestedInput
   }
 
   export type foodsUpsertWithoutOrdersInput = {
@@ -9068,6 +13720,99 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type ChatGroupMembersCreateWithoutUsersInput = {
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroups?: ChatGroupsCreateNestedOneWithoutChatGroupMembersInput
+  }
+
+  export type ChatGroupMembersUncheckedCreateWithoutUsersInput = {
+    id?: number
+    chatGroupId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupMembersCreateOrConnectWithoutUsersInput = {
+    where: ChatGroupMembersWhereUniqueInput
+    create: XOR<ChatGroupMembersCreateWithoutUsersInput, ChatGroupMembersUncheckedCreateWithoutUsersInput>
+  }
+
+  export type ChatGroupMembersCreateManyUsersInputEnvelope = {
+    data: ChatGroupMembersCreateManyUsersInput | ChatGroupMembersCreateManyUsersInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ChatGroupsCreateWithoutUsersInput = {
+    name?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutChatGroupsInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsUncheckedCreateWithoutUsersInput = {
+    id?: number
+    name?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutChatGroupsInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsCreateOrConnectWithoutUsersInput = {
+    where: ChatGroupsWhereUniqueInput
+    create: XOR<ChatGroupsCreateWithoutUsersInput, ChatGroupsUncheckedCreateWithoutUsersInput>
+  }
+
+  export type ChatGroupsCreateManyUsersInputEnvelope = {
+    data: ChatGroupsCreateManyUsersInput | ChatGroupsCreateManyUsersInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ChatMessagesCreateWithoutUsersInput = {
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroups?: ChatGroupsCreateNestedOneWithoutChatMessagesInput
+  }
+
+  export type ChatMessagesUncheckedCreateWithoutUsersInput = {
+    id?: number
+    chatGroupId?: number | null
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatMessagesCreateOrConnectWithoutUsersInput = {
+    where: ChatMessagesWhereUniqueInput
+    create: XOR<ChatMessagesCreateWithoutUsersInput, ChatMessagesUncheckedCreateWithoutUsersInput>
+  }
+
+  export type ChatMessagesCreateManyUsersInputEnvelope = {
+    data: ChatMessagesCreateManyUsersInput | ChatMessagesCreateManyUsersInput[]
+    skipDuplicates?: boolean
+  }
+
   export type OrdersCreateWithoutUsersInput = {
     deletedBy?: number
     isDeleted?: boolean
@@ -9163,6 +13908,97 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Articles_demo"> | Date | string
   }
 
+  export type ChatGroupMembersUpsertWithWhereUniqueWithoutUsersInput = {
+    where: ChatGroupMembersWhereUniqueInput
+    update: XOR<ChatGroupMembersUpdateWithoutUsersInput, ChatGroupMembersUncheckedUpdateWithoutUsersInput>
+    create: XOR<ChatGroupMembersCreateWithoutUsersInput, ChatGroupMembersUncheckedCreateWithoutUsersInput>
+  }
+
+  export type ChatGroupMembersUpdateWithWhereUniqueWithoutUsersInput = {
+    where: ChatGroupMembersWhereUniqueInput
+    data: XOR<ChatGroupMembersUpdateWithoutUsersInput, ChatGroupMembersUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type ChatGroupMembersUpdateManyWithWhereWithoutUsersInput = {
+    where: ChatGroupMembersScalarWhereInput
+    data: XOR<ChatGroupMembersUpdateManyMutationInput, ChatGroupMembersUncheckedUpdateManyWithoutUsersInput>
+  }
+
+  export type ChatGroupMembersScalarWhereInput = {
+    AND?: ChatGroupMembersScalarWhereInput | ChatGroupMembersScalarWhereInput[]
+    OR?: ChatGroupMembersScalarWhereInput[]
+    NOT?: ChatGroupMembersScalarWhereInput | ChatGroupMembersScalarWhereInput[]
+    id?: IntFilter<"ChatGroupMembers"> | number
+    userId?: IntNullableFilter<"ChatGroupMembers"> | number | null
+    chatGroupId?: IntNullableFilter<"ChatGroupMembers"> | number | null
+    deletedBy?: IntFilter<"ChatGroupMembers"> | number
+    isDeleted?: BoolFilter<"ChatGroupMembers"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatGroupMembers"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatGroupMembers"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatGroupMembers"> | Date | string
+  }
+
+  export type ChatGroupsUpsertWithWhereUniqueWithoutUsersInput = {
+    where: ChatGroupsWhereUniqueInput
+    update: XOR<ChatGroupsUpdateWithoutUsersInput, ChatGroupsUncheckedUpdateWithoutUsersInput>
+    create: XOR<ChatGroupsCreateWithoutUsersInput, ChatGroupsUncheckedCreateWithoutUsersInput>
+  }
+
+  export type ChatGroupsUpdateWithWhereUniqueWithoutUsersInput = {
+    where: ChatGroupsWhereUniqueInput
+    data: XOR<ChatGroupsUpdateWithoutUsersInput, ChatGroupsUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type ChatGroupsUpdateManyWithWhereWithoutUsersInput = {
+    where: ChatGroupsScalarWhereInput
+    data: XOR<ChatGroupsUpdateManyMutationInput, ChatGroupsUncheckedUpdateManyWithoutUsersInput>
+  }
+
+  export type ChatGroupsScalarWhereInput = {
+    AND?: ChatGroupsScalarWhereInput | ChatGroupsScalarWhereInput[]
+    OR?: ChatGroupsScalarWhereInput[]
+    NOT?: ChatGroupsScalarWhereInput | ChatGroupsScalarWhereInput[]
+    id?: IntFilter<"ChatGroups"> | number
+    name?: StringNullableFilter<"ChatGroups"> | string | null
+    ownerId?: IntNullableFilter<"ChatGroups"> | number | null
+    deletedBy?: IntFilter<"ChatGroups"> | number
+    isDeleted?: BoolFilter<"ChatGroups"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatGroups"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatGroups"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatGroups"> | Date | string
+  }
+
+  export type ChatMessagesUpsertWithWhereUniqueWithoutUsersInput = {
+    where: ChatMessagesWhereUniqueInput
+    update: XOR<ChatMessagesUpdateWithoutUsersInput, ChatMessagesUncheckedUpdateWithoutUsersInput>
+    create: XOR<ChatMessagesCreateWithoutUsersInput, ChatMessagesUncheckedCreateWithoutUsersInput>
+  }
+
+  export type ChatMessagesUpdateWithWhereUniqueWithoutUsersInput = {
+    where: ChatMessagesWhereUniqueInput
+    data: XOR<ChatMessagesUpdateWithoutUsersInput, ChatMessagesUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type ChatMessagesUpdateManyWithWhereWithoutUsersInput = {
+    where: ChatMessagesScalarWhereInput
+    data: XOR<ChatMessagesUpdateManyMutationInput, ChatMessagesUncheckedUpdateManyWithoutUsersInput>
+  }
+
+  export type ChatMessagesScalarWhereInput = {
+    AND?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
+    OR?: ChatMessagesScalarWhereInput[]
+    NOT?: ChatMessagesScalarWhereInput | ChatMessagesScalarWhereInput[]
+    id?: IntFilter<"ChatMessages"> | number
+    chatGroupId?: IntNullableFilter<"ChatMessages"> | number | null
+    userIdSender?: IntNullableFilter<"ChatMessages"> | number | null
+    messageText?: StringNullableFilter<"ChatMessages"> | string | null
+    deletedBy?: IntFilter<"ChatMessages"> | number
+    isDeleted?: BoolFilter<"ChatMessages"> | boolean
+    deletedAt?: DateTimeNullableFilter<"ChatMessages"> | Date | string | null
+    createdAt?: DateTimeFilter<"ChatMessages"> | Date | string
+    updatedAt?: DateTimeFilter<"ChatMessages"> | Date | string
+  }
+
   export type OrdersUpsertWithWhereUniqueWithoutUsersInput = {
     where: OrdersWhereUniqueInput
     update: XOR<OrdersUpdateWithoutUsersInput, OrdersUncheckedUpdateWithoutUsersInput>
@@ -9238,6 +14074,516 @@ export namespace Prisma {
     data: XOR<OrdersUpdateManyMutationInput, OrdersUncheckedUpdateManyWithoutFoodsInput>
   }
 
+  export type UsersCreateWithoutChatGroupMembersInput = {
+    email: string
+    fullName?: string | null
+    avatar?: string | null
+    age?: number | null
+    totpSecret?: string | null
+    googleId?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    password?: string | null
+    Articles?: ArticlesCreateNestedManyWithoutUsersInput
+    Articles_demo?: Articles_demoCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutUsersInput
+    Orders?: OrdersCreateNestedManyWithoutUsersInput
+  }
+
+  export type UsersUncheckedCreateWithoutChatGroupMembersInput = {
+    id?: number
+    email: string
+    fullName?: string | null
+    avatar?: string | null
+    age?: number | null
+    totpSecret?: string | null
+    googleId?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    password?: string | null
+    Articles?: ArticlesUncheckedCreateNestedManyWithoutUsersInput
+    Articles_demo?: Articles_demoUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsUncheckedCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutUsersInput
+    Orders?: OrdersUncheckedCreateNestedManyWithoutUsersInput
+  }
+
+  export type UsersCreateOrConnectWithoutChatGroupMembersInput = {
+    where: UsersWhereUniqueInput
+    create: XOR<UsersCreateWithoutChatGroupMembersInput, UsersUncheckedCreateWithoutChatGroupMembersInput>
+  }
+
+  export type ChatGroupsCreateWithoutChatGroupMembersInput = {
+    name?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    Users?: UsersCreateNestedOneWithoutChatGroupsInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsUncheckedCreateWithoutChatGroupMembersInput = {
+    id?: number
+    name?: string | null
+    ownerId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsCreateOrConnectWithoutChatGroupMembersInput = {
+    where: ChatGroupsWhereUniqueInput
+    create: XOR<ChatGroupsCreateWithoutChatGroupMembersInput, ChatGroupsUncheckedCreateWithoutChatGroupMembersInput>
+  }
+
+  export type UsersUpsertWithoutChatGroupMembersInput = {
+    update: XOR<UsersUpdateWithoutChatGroupMembersInput, UsersUncheckedUpdateWithoutChatGroupMembersInput>
+    create: XOR<UsersCreateWithoutChatGroupMembersInput, UsersUncheckedCreateWithoutChatGroupMembersInput>
+    where?: UsersWhereInput
+  }
+
+  export type UsersUpdateToOneWithWhereWithoutChatGroupMembersInput = {
+    where?: UsersWhereInput
+    data: XOR<UsersUpdateWithoutChatGroupMembersInput, UsersUncheckedUpdateWithoutChatGroupMembersInput>
+  }
+
+  export type UsersUpdateWithoutChatGroupMembersInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    age?: NullableIntFieldUpdateOperationsInput | number | null
+    totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    googleId?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    Articles?: ArticlesUpdateManyWithoutUsersNestedInput
+    Articles_demo?: Articles_demoUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutUsersNestedInput
+    Orders?: OrdersUpdateManyWithoutUsersNestedInput
+  }
+
+  export type UsersUncheckedUpdateWithoutChatGroupMembersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    age?: NullableIntFieldUpdateOperationsInput | number | null
+    totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    googleId?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    Articles?: ArticlesUncheckedUpdateManyWithoutUsersNestedInput
+    Articles_demo?: Articles_demoUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUncheckedUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutUsersNestedInput
+    Orders?: OrdersUncheckedUpdateManyWithoutUsersNestedInput
+  }
+
+  export type ChatGroupsUpsertWithoutChatGroupMembersInput = {
+    update: XOR<ChatGroupsUpdateWithoutChatGroupMembersInput, ChatGroupsUncheckedUpdateWithoutChatGroupMembersInput>
+    create: XOR<ChatGroupsCreateWithoutChatGroupMembersInput, ChatGroupsUncheckedCreateWithoutChatGroupMembersInput>
+    where?: ChatGroupsWhereInput
+  }
+
+  export type ChatGroupsUpdateToOneWithWhereWithoutChatGroupMembersInput = {
+    where?: ChatGroupsWhereInput
+    data: XOR<ChatGroupsUpdateWithoutChatGroupMembersInput, ChatGroupsUncheckedUpdateWithoutChatGroupMembersInput>
+  }
+
+  export type ChatGroupsUpdateWithoutChatGroupMembersInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    Users?: UsersUpdateOneWithoutChatGroupsNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutChatGroupsNestedInput
+  }
+
+  export type ChatGroupsUncheckedUpdateWithoutChatGroupMembersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    ownerId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutChatGroupsNestedInput
+  }
+
+  export type ChatGroupMembersCreateWithoutChatGroupsInput = {
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    Users?: UsersCreateNestedOneWithoutChatGroupMembersInput
+  }
+
+  export type ChatGroupMembersUncheckedCreateWithoutChatGroupsInput = {
+    id?: number
+    userId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupMembersCreateOrConnectWithoutChatGroupsInput = {
+    where: ChatGroupMembersWhereUniqueInput
+    create: XOR<ChatGroupMembersCreateWithoutChatGroupsInput, ChatGroupMembersUncheckedCreateWithoutChatGroupsInput>
+  }
+
+  export type ChatGroupMembersCreateManyChatGroupsInputEnvelope = {
+    data: ChatGroupMembersCreateManyChatGroupsInput | ChatGroupMembersCreateManyChatGroupsInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UsersCreateWithoutChatGroupsInput = {
+    email: string
+    fullName?: string | null
+    avatar?: string | null
+    age?: number | null
+    totpSecret?: string | null
+    googleId?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    password?: string | null
+    Articles?: ArticlesCreateNestedManyWithoutUsersInput
+    Articles_demo?: Articles_demoCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesCreateNestedManyWithoutUsersInput
+    Orders?: OrdersCreateNestedManyWithoutUsersInput
+  }
+
+  export type UsersUncheckedCreateWithoutChatGroupsInput = {
+    id?: number
+    email: string
+    fullName?: string | null
+    avatar?: string | null
+    age?: number | null
+    totpSecret?: string | null
+    googleId?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    password?: string | null
+    Articles?: ArticlesUncheckedCreateNestedManyWithoutUsersInput
+    Articles_demo?: Articles_demoUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutUsersInput
+    ChatMessages?: ChatMessagesUncheckedCreateNestedManyWithoutUsersInput
+    Orders?: OrdersUncheckedCreateNestedManyWithoutUsersInput
+  }
+
+  export type UsersCreateOrConnectWithoutChatGroupsInput = {
+    where: UsersWhereUniqueInput
+    create: XOR<UsersCreateWithoutChatGroupsInput, UsersUncheckedCreateWithoutChatGroupsInput>
+  }
+
+  export type ChatMessagesCreateWithoutChatGroupsInput = {
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    Users?: UsersCreateNestedOneWithoutChatMessagesInput
+  }
+
+  export type ChatMessagesUncheckedCreateWithoutChatGroupsInput = {
+    id?: number
+    userIdSender?: number | null
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatMessagesCreateOrConnectWithoutChatGroupsInput = {
+    where: ChatMessagesWhereUniqueInput
+    create: XOR<ChatMessagesCreateWithoutChatGroupsInput, ChatMessagesUncheckedCreateWithoutChatGroupsInput>
+  }
+
+  export type ChatMessagesCreateManyChatGroupsInputEnvelope = {
+    data: ChatMessagesCreateManyChatGroupsInput | ChatMessagesCreateManyChatGroupsInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ChatGroupMembersUpsertWithWhereUniqueWithoutChatGroupsInput = {
+    where: ChatGroupMembersWhereUniqueInput
+    update: XOR<ChatGroupMembersUpdateWithoutChatGroupsInput, ChatGroupMembersUncheckedUpdateWithoutChatGroupsInput>
+    create: XOR<ChatGroupMembersCreateWithoutChatGroupsInput, ChatGroupMembersUncheckedCreateWithoutChatGroupsInput>
+  }
+
+  export type ChatGroupMembersUpdateWithWhereUniqueWithoutChatGroupsInput = {
+    where: ChatGroupMembersWhereUniqueInput
+    data: XOR<ChatGroupMembersUpdateWithoutChatGroupsInput, ChatGroupMembersUncheckedUpdateWithoutChatGroupsInput>
+  }
+
+  export type ChatGroupMembersUpdateManyWithWhereWithoutChatGroupsInput = {
+    where: ChatGroupMembersScalarWhereInput
+    data: XOR<ChatGroupMembersUpdateManyMutationInput, ChatGroupMembersUncheckedUpdateManyWithoutChatGroupsInput>
+  }
+
+  export type UsersUpsertWithoutChatGroupsInput = {
+    update: XOR<UsersUpdateWithoutChatGroupsInput, UsersUncheckedUpdateWithoutChatGroupsInput>
+    create: XOR<UsersCreateWithoutChatGroupsInput, UsersUncheckedCreateWithoutChatGroupsInput>
+    where?: UsersWhereInput
+  }
+
+  export type UsersUpdateToOneWithWhereWithoutChatGroupsInput = {
+    where?: UsersWhereInput
+    data: XOR<UsersUpdateWithoutChatGroupsInput, UsersUncheckedUpdateWithoutChatGroupsInput>
+  }
+
+  export type UsersUpdateWithoutChatGroupsInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    age?: NullableIntFieldUpdateOperationsInput | number | null
+    totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    googleId?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    Articles?: ArticlesUpdateManyWithoutUsersNestedInput
+    Articles_demo?: Articles_demoUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutUsersNestedInput
+    Orders?: OrdersUpdateManyWithoutUsersNestedInput
+  }
+
+  export type UsersUncheckedUpdateWithoutChatGroupsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    age?: NullableIntFieldUpdateOperationsInput | number | null
+    totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    googleId?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    Articles?: ArticlesUncheckedUpdateManyWithoutUsersNestedInput
+    Articles_demo?: Articles_demoUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutUsersNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutUsersNestedInput
+    Orders?: OrdersUncheckedUpdateManyWithoutUsersNestedInput
+  }
+
+  export type ChatMessagesUpsertWithWhereUniqueWithoutChatGroupsInput = {
+    where: ChatMessagesWhereUniqueInput
+    update: XOR<ChatMessagesUpdateWithoutChatGroupsInput, ChatMessagesUncheckedUpdateWithoutChatGroupsInput>
+    create: XOR<ChatMessagesCreateWithoutChatGroupsInput, ChatMessagesUncheckedCreateWithoutChatGroupsInput>
+  }
+
+  export type ChatMessagesUpdateWithWhereUniqueWithoutChatGroupsInput = {
+    where: ChatMessagesWhereUniqueInput
+    data: XOR<ChatMessagesUpdateWithoutChatGroupsInput, ChatMessagesUncheckedUpdateWithoutChatGroupsInput>
+  }
+
+  export type ChatMessagesUpdateManyWithWhereWithoutChatGroupsInput = {
+    where: ChatMessagesScalarWhereInput
+    data: XOR<ChatMessagesUpdateManyMutationInput, ChatMessagesUncheckedUpdateManyWithoutChatGroupsInput>
+  }
+
+  export type ChatGroupsCreateWithoutChatMessagesInput = {
+    name?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutChatGroupsInput
+    Users?: UsersCreateNestedOneWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsUncheckedCreateWithoutChatMessagesInput = {
+    id?: number
+    name?: string | null
+    ownerId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutChatGroupsInput
+  }
+
+  export type ChatGroupsCreateOrConnectWithoutChatMessagesInput = {
+    where: ChatGroupsWhereUniqueInput
+    create: XOR<ChatGroupsCreateWithoutChatMessagesInput, ChatGroupsUncheckedCreateWithoutChatMessagesInput>
+  }
+
+  export type UsersCreateWithoutChatMessagesInput = {
+    email: string
+    fullName?: string | null
+    avatar?: string | null
+    age?: number | null
+    totpSecret?: string | null
+    googleId?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    password?: string | null
+    Articles?: ArticlesCreateNestedManyWithoutUsersInput
+    Articles_demo?: Articles_demoCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsCreateNestedManyWithoutUsersInput
+    Orders?: OrdersCreateNestedManyWithoutUsersInput
+  }
+
+  export type UsersUncheckedCreateWithoutChatMessagesInput = {
+    id?: number
+    email: string
+    fullName?: string | null
+    avatar?: string | null
+    age?: number | null
+    totpSecret?: string | null
+    googleId?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    password?: string | null
+    Articles?: ArticlesUncheckedCreateNestedManyWithoutUsersInput
+    Articles_demo?: Articles_demoUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedCreateNestedManyWithoutUsersInput
+    ChatGroups?: ChatGroupsUncheckedCreateNestedManyWithoutUsersInput
+    Orders?: OrdersUncheckedCreateNestedManyWithoutUsersInput
+  }
+
+  export type UsersCreateOrConnectWithoutChatMessagesInput = {
+    where: UsersWhereUniqueInput
+    create: XOR<UsersCreateWithoutChatMessagesInput, UsersUncheckedCreateWithoutChatMessagesInput>
+  }
+
+  export type ChatGroupsUpsertWithoutChatMessagesInput = {
+    update: XOR<ChatGroupsUpdateWithoutChatMessagesInput, ChatGroupsUncheckedUpdateWithoutChatMessagesInput>
+    create: XOR<ChatGroupsCreateWithoutChatMessagesInput, ChatGroupsUncheckedCreateWithoutChatMessagesInput>
+    where?: ChatGroupsWhereInput
+  }
+
+  export type ChatGroupsUpdateToOneWithWhereWithoutChatMessagesInput = {
+    where?: ChatGroupsWhereInput
+    data: XOR<ChatGroupsUpdateWithoutChatMessagesInput, ChatGroupsUncheckedUpdateWithoutChatMessagesInput>
+  }
+
+  export type ChatGroupsUpdateWithoutChatMessagesInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutChatGroupsNestedInput
+    Users?: UsersUpdateOneWithoutChatGroupsNestedInput
+  }
+
+  export type ChatGroupsUncheckedUpdateWithoutChatMessagesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    ownerId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutChatGroupsNestedInput
+  }
+
+  export type UsersUpsertWithoutChatMessagesInput = {
+    update: XOR<UsersUpdateWithoutChatMessagesInput, UsersUncheckedUpdateWithoutChatMessagesInput>
+    create: XOR<UsersCreateWithoutChatMessagesInput, UsersUncheckedCreateWithoutChatMessagesInput>
+    where?: UsersWhereInput
+  }
+
+  export type UsersUpdateToOneWithWhereWithoutChatMessagesInput = {
+    where?: UsersWhereInput
+    data: XOR<UsersUpdateWithoutChatMessagesInput, UsersUncheckedUpdateWithoutChatMessagesInput>
+  }
+
+  export type UsersUpdateWithoutChatMessagesInput = {
+    email?: StringFieldUpdateOperationsInput | string
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    age?: NullableIntFieldUpdateOperationsInput | number | null
+    totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    googleId?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    Articles?: ArticlesUpdateManyWithoutUsersNestedInput
+    Articles_demo?: Articles_demoUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUpdateManyWithoutUsersNestedInput
+    Orders?: OrdersUpdateManyWithoutUsersNestedInput
+  }
+
+  export type UsersUncheckedUpdateWithoutChatMessagesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    email?: StringFieldUpdateOperationsInput | string
+    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    avatar?: NullableStringFieldUpdateOperationsInput | string | null
+    age?: NullableIntFieldUpdateOperationsInput | number | null
+    totpSecret?: NullableStringFieldUpdateOperationsInput | string | null
+    googleId?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    password?: NullableStringFieldUpdateOperationsInput | string | null
+    Articles?: ArticlesUncheckedUpdateManyWithoutUsersNestedInput
+    Articles_demo?: Articles_demoUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutUsersNestedInput
+    ChatGroups?: ChatGroupsUncheckedUpdateManyWithoutUsersNestedInput
+    Orders?: OrdersUncheckedUpdateManyWithoutUsersNestedInput
+  }
+
   export type ArticlesCreateManyUsersInput = {
     id?: number
     title?: string | null
@@ -9259,6 +14605,37 @@ export namespace Prisma {
     views?: number | null
     deletedBy?: number | null
     isDeleted?: boolean | null
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupMembersCreateManyUsersInput = {
+    id?: number
+    chatGroupId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupsCreateManyUsersInput = {
+    id?: number
+    name?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatMessagesCreateManyUsersInput = {
+    id?: number
+    chatGroupId?: number | null
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
     deletedAt?: Date | string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -9350,6 +14727,100 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type ChatGroupMembersUpdateWithoutUsersInput = {
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroups?: ChatGroupsUpdateOneWithoutChatGroupMembersNestedInput
+  }
+
+  export type ChatGroupMembersUncheckedUpdateWithoutUsersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupMembersUncheckedUpdateManyWithoutUsersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupsUpdateWithoutUsersInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroupMembers?: ChatGroupMembersUpdateManyWithoutChatGroupsNestedInput
+    ChatMessages?: ChatMessagesUpdateManyWithoutChatGroupsNestedInput
+  }
+
+  export type ChatGroupsUncheckedUpdateWithoutUsersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroupMembers?: ChatGroupMembersUncheckedUpdateManyWithoutChatGroupsNestedInput
+    ChatMessages?: ChatMessagesUncheckedUpdateManyWithoutChatGroupsNestedInput
+  }
+
+  export type ChatGroupsUncheckedUpdateManyWithoutUsersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatMessagesUpdateWithoutUsersInput = {
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    ChatGroups?: ChatGroupsUpdateOneWithoutChatMessagesNestedInput
+  }
+
+  export type ChatMessagesUncheckedUpdateWithoutUsersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatMessagesUncheckedUpdateManyWithoutUsersInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    chatGroupId?: NullableIntFieldUpdateOperationsInput | number | null
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type OrdersUpdateWithoutUsersInput = {
     deletedBy?: IntFieldUpdateOperationsInput | number
     isDeleted?: BoolFieldUpdateOperationsInput | boolean
@@ -9411,6 +14882,88 @@ export namespace Prisma {
   export type OrdersUncheckedUpdateManyWithoutFoodsInput = {
     id?: IntFieldUpdateOperationsInput | number
     userId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupMembersCreateManyChatGroupsInput = {
+    id?: number
+    userId?: number | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatMessagesCreateManyChatGroupsInput = {
+    id?: number
+    userIdSender?: number | null
+    messageText?: string | null
+    deletedBy?: number
+    isDeleted?: boolean
+    deletedAt?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ChatGroupMembersUpdateWithoutChatGroupsInput = {
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    Users?: UsersUpdateOneWithoutChatGroupMembersNestedInput
+  }
+
+  export type ChatGroupMembersUncheckedUpdateWithoutChatGroupsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatGroupMembersUncheckedUpdateManyWithoutChatGroupsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userId?: NullableIntFieldUpdateOperationsInput | number | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatMessagesUpdateWithoutChatGroupsInput = {
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    Users?: UsersUpdateOneWithoutChatMessagesNestedInput
+  }
+
+  export type ChatMessagesUncheckedUpdateWithoutChatGroupsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userIdSender?: NullableIntFieldUpdateOperationsInput | number | null
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
+    deletedBy?: IntFieldUpdateOperationsInput | number
+    isDeleted?: BoolFieldUpdateOperationsInput | boolean
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ChatMessagesUncheckedUpdateManyWithoutChatGroupsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    userIdSender?: NullableIntFieldUpdateOperationsInput | number | null
+    messageText?: NullableStringFieldUpdateOperationsInput | string | null
     deletedBy?: IntFieldUpdateOperationsInput | number
     isDeleted?: BoolFieldUpdateOperationsInput | boolean
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null

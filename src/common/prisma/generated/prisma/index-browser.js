@@ -162,7 +162,7 @@ exports.Prisma.OrdersScalarFieldEnum = {
 exports.Prisma.UsersScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  fullname: 'fullname',
+  fullName: 'fullName',
   avatar: 'avatar',
   age: 'age',
   totpSecret: 'totpSecret',
@@ -179,6 +179,40 @@ exports.Prisma.FoodsScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
+  deletedBy: 'deletedBy',
+  isDeleted: 'isDeleted',
+  deletedAt: 'deletedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ChatGroupMembersScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  chatGroupId: 'chatGroupId',
+  deletedBy: 'deletedBy',
+  isDeleted: 'isDeleted',
+  deletedAt: 'deletedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ChatGroupsScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  ownerId: 'ownerId',
+  deletedBy: 'deletedBy',
+  isDeleted: 'isDeleted',
+  deletedAt: 'deletedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ChatMessagesScalarFieldEnum = {
+  id: 'id',
+  chatGroupId: 'chatGroupId',
+  userIdSender: 'userIdSender',
+  messageText: 'messageText',
   deletedBy: 'deletedBy',
   isDeleted: 'isDeleted',
   deletedAt: 'deletedAt',
@@ -210,7 +244,7 @@ exports.Prisma.Articles_demoOrderByRelevanceFieldEnum = {
 
 exports.Prisma.UsersOrderByRelevanceFieldEnum = {
   email: 'email',
-  fullname: 'fullname',
+  fullName: 'fullName',
   avatar: 'avatar',
   totpSecret: 'totpSecret',
   googleId: 'googleId',
@@ -222,13 +256,24 @@ exports.Prisma.foodsOrderByRelevanceFieldEnum = {
   description: 'description'
 };
 
+exports.Prisma.ChatGroupsOrderByRelevanceFieldEnum = {
+  name: 'name'
+};
+
+exports.Prisma.ChatMessagesOrderByRelevanceFieldEnum = {
+  messageText: 'messageText'
+};
+
 
 exports.Prisma.ModelName = {
   Articles: 'Articles',
   Articles_demo: 'Articles_demo',
   Orders: 'Orders',
   Users: 'Users',
-  foods: 'foods'
+  foods: 'foods',
+  ChatGroupMembers: 'ChatGroupMembers',
+  ChatGroups: 'ChatGroups',
+  ChatMessages: 'ChatMessages'
 };
 
 /**
